@@ -1,0 +1,142 @@
+<!--pages/mine/mine.wxml-->
+
+
+<view class='over'>
+  <view class='m-header'>
+  </view>
+  <view class='m-mineheader'>
+    <view class='tc'>
+      <image src='{{user.avatarUrl}}' class='m-mineheadimg'></image>
+    </view>
+    <view class='tc m-username'>{{user.nickname || user.Name}}</view>
+    <view class='m-flowerAjifen'>
+      <view><image src='../../images/flower@2x.png' mode='widthFix'></image> 花瓣 {{Reward}}</view>
+      <view class='ml24' bindtap='go_IntegralDetail'><image src='../../images/jifen@2x.png' mode='widthFix'></image> 积分 {{Integral}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='m-txt'>我的订单</view>
+<view class='flex m-menulist'>
+  <block wx:for="{{orderMenu}}" wx:key="index">
+    <view class='flexcell m-ordermenu' bindtap='toMyOrders' data-type="{{index}}">
+      <image src='{{item.imgUrl}}' mode='widthFix'></image>
+      <rich-text name="p">{{item.text}}</rich-text>
+      <text class='m-ordernum' wx:if="{{item.num>0}}">{{item.num}}</text>
+    </view>
+  </block>
+</view>
+
+<view class='m-txt'>必备工具</view>
+<view class='m-menulist flex'>
+  <view>
+    <navigator url="../myAppointment/myAppointment">
+      <image src='../../images/mine-appoint@2x.png'></image>
+      <rich-text name="p">我的预约</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../myCollage/myCollage">
+      <image src='../../images/mine-collage@2x.png'></image>
+      <rich-text name="p">我的拼团</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../projectAppraise/projectAppraise">
+      <image src='../../images/projectRated@2x.png'></image>
+      <rich-text name="p">项目评价</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../balanceDetail/balanceDetail">
+      <image src='../../images/balanceDetail@2x.png'></image>
+      <rich-text name="p">余额详情</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../consumeList/consumeList">
+      <image src='../../images/xfRecord@2x.png'></image>
+      <rich-text name="p">消费记录</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../jifenMall/jifenMall">
+      <image src='../../images/jfMall@2x.png'></image>
+      <rich-text name="p">积分商城</rich-text>
+    </navigator>
+  </view>
+  <view bindtap='showMyrecommend'>
+    <!-- <navigator url="../myCollage/myCollage"> -->
+      <image src='../../images/recommend@2x.png'></image>
+      <rich-text name="p">我的团队</rich-text>
+    <!-- </navigator> -->
+  </view>
+  <!-- <view>
+    <navigator url="../awardDetail/awardDetail">
+      <image src='../../images/jlDetail@2x.png'></image>
+      <rich-text name="p">奖励明细</rich-text>
+    </navigator>
+  </view> -->
+  <view>
+    <navigator url="../withdraw/withdraw">
+      <image src='../../images/withdrawApply@2x.png'></image>
+      <rich-text name="p">提现申请</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../address/address">
+      <image src='../../images/mine-addr@2x.png'></image>
+      <rich-text name="p">地址管理</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../modifyMeminfo/modifyMeminfo">
+      <image src='../../images/mine-setting@2x.png'></image>
+      <rich-text name="p">修改资料</rich-text>
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../mineseckill/mineseckill">
+      <image src='../../images/myseckill.png'></image>
+      <rich-text name="p">我的秒杀</rich-text>
+    </navigator>
+  </view>
+</view>
+
+<view class='fixed' catchtouchmove='fixedMove'
+style='top:{{fixedTop}}px; left:{{fixedLeft}}px' bindtap='Service_Star'>
+  <image src='../../images/fixed-icon@2x.png' mode='widthFix'></image>
+</view>
+
+<view class='m-recommend-table' wx:if="{{show_Service_Star}}">
+  <image class='m-close_serve' src='../../images/close.png' bindtap='Service_Star'></image>
+  <view class='m-recommend-content'>
+    <view class='content-title'>服务之星</view>
+    <view class='m-list-table' wx:for="{{star_array}}" :key="index">
+      <view class='m-list'>
+        <view class='m-left'>
+          <view class='m-number'>NO.{{index+1}}</view>
+          <image wx:if="{{item.headImg}}" src='{{item.headImg}}'></image>
+          <image wx:else src='../../images/Head.png'></image>
+          <view class='m-text'>
+            <view class='text-name'>{{item.Name}}</view>
+            <view>累计星星{{item.PointScore}}颗</view>
+          </view>
+        </view>
+        <view class='m-right'>
+          <view class='m-button' data-id='{{item.Id}}' data-shop='{{item.ShopId}}' bindtap='go_appoint'>预约</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 获取手机号授权 -->
+<!-- <accreditPhone wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></accreditPhone> -->
+<!-- 我的团队 -->
+<myRecommend wx:if="{{isMyrecommend}}" bind:closeSpec="closeSpec"></myRecommend>
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>

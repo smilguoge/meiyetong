@@ -1,0 +1,62 @@
+<!--pages/appointTechnician/appointTechnician.wxml-->
+<accreditPhone wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></accreditPhone>
+
+<view class='flex' style='align-items:flex-start'>
+  <view class='left'>
+    <block wx:for="{{leftList}}" wx:key="index" wx:for-item="leftitems">
+      <view class='{{index==leftIdx?"active":""}}' bindtap='chooseMenu' data-index='{{index}}'>
+        {{leftitems.type}}
+        <i class='count {{count[index]!=0?"on":""}}'>{{count[index]}}</i>
+      </view>
+    </block>
+  </view>
+  <view class='right flexcell'>
+    <block wx:for="{{leftList}}" wx:key="index" wx:for-item="leftitems" wx:for-index="idx">
+      <view class='projectBlock {{idx==leftIdx?"on":""}} projectBlock{{index}}' data-index='{{index}}'>
+        <block wx:for="{{proList[idx]}}" wx:key="index" wx:for-item="rightitems">
+          <view class='flex m-proListitem' data-idx="{{idx}}" data-index='{{index}}' data-id='{{rightitems.Id}}' bindtap='chooseProlistItem' data-projectid="{{rightitems.ProjectId}}" data-projectname="{{rightitems.ProjectName}}">
+            <image src='{{rightitems.project_avatar?rightitems.project_avatar:"/img/home/首页项目图1.png"}}' class='m-proImg'></image>
+            <view class='flexcell m-proItem'>
+              <text>{{rightitems.ProjectName}}</text>
+              <view class='flex'>
+                <view class='flexcell'>
+                  <image src='../../images/oclock_1@2x.png' mode='widthFix' class='m-proItem-img'></image>
+                  {{rightitems.StanderTime}}分钟
+                </view>
+                <view class='flexcell'>
+                  <image src='../../images/user_1@2x.png' mode='widthFix' class='m-proItem-img'></image>
+                  {{rightitems.ProjectSales || '0'}}人做过
+                </view>
+              </view>
+              <image class='chooseIcon' src='{{rightitems.isselect ? chooseIcon2:chooseIcon}}' mode='widthFix'></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='nextBtn' bindtap='showDialog'>确 定</view>
+
+<template name="projectdata">
+  <view class="m-loadmore m-loadmore_line">
+        <span class="m-loadmore__tips">暂无更多数据</span>
+  </view>
+</template>
+
+<!--无数据组件-->
+<block wx:if="{{projectshow}}">
+  <template is="projectdata" />
+</block>
+
+
+<view wx:if="{{isShow}}">
+  <!-- <template is="dialog" /> -->
+  <dialog id='dialog' 
+    dialogTitle='预约信息' 
+    dialogCont='{{dialogCont}}' 
+    bind:dialogEvent="dialogEvent"
+    bind:dialogEvent_close="dialogEvent_close">
+  </dialog>
+</view>
+

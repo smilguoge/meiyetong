@@ -1,0 +1,19 @@
+/* pages/jifenMall/jifenItem/jifenItem.wxss */
+@import '../../../app.wxss';
+
+.m-jifenItem{
+  font-size: 32rpx;
+  height: 60px;
+}
+.m-jifenItem .jifenItem-left{
+  float: left;
+  width: 25%;
+  text-align: center;
+  line-height: 60px;
+}
+.m-jifenItem .jifenItem-right{
+  padding-top: 13px;
+  float: left;
+  width: 70%;
+  font-size: 13px;
+}

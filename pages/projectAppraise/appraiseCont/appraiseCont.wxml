@@ -1,0 +1,61 @@
+<!--pages/projectAppraise/appraiseCont/appraiseCont.wxml-->
+<view class='shadow' bindtap='closeAllcollage'></view>
+<view class='isCollaging'>
+  <view class='closeX' bindtap='closeAllcollage'>X</view>
+  <view class='m-title'>评价</view>
+  <view class='p16'>
+    <image src='../../../images/shop-icon2@2x.png' mode='widthFix' class='m-shopicon'></image>
+    {{assess_data.shop.shopName}}
+  </view>
+  <view class='p16'>
+    <image src='../../../images/oclock_1@2x.png' mode='widthFix' class='m-shopicon'></image>
+    {{assess_data.shop.time}}
+  </view>
+  <view class='p16' wx:for="{{assess_data.project}}" wx:key="index">
+    <image src='../../../images/project-icon@2x.png' mode='widthFix' class='m-shopicon'></image>
+    {{item.name}}
+  </view>
+  <view class='p16 flex m-pingjia'>
+    <image src='../../../images/flower-icon@2x.png' mode='widthFix' class='m-shopicon'></image>
+    <view class='flexcell'>
+      <view class='mb24'>快速评价</view>
+      <view class='flex mb24'>
+        <text>服务水平</text>
+        <view class='ml24'>
+          <block wx:for="{{service_stars}}" wx:key="index">
+          <image src='../../../images/star-icon@2x.png' mode='widthFix' class='m-shopicon' id='on' data-index="{{index}}" data-type="service" bindtap='change_stars'></image>
+          </block>
+          <block wx:for="{{5-service_stars}}" wx:key="index">
+          <image src='../../../images/star_no.png' mode='widthFix' class='m-shopicon' data-index="{{index}}" bindtap='change_stars' data-type="service"></image>
+          </block>
+        </view>
+      </view>
+      <view class='flex mb24'>
+        <text>技术水平</text>
+        <view class='ml24'>
+          <block wx:for="{{technology_stars}}" wx:key="index">
+            <image src='../../../images/star-icon@2x.png' mode='widthFix' class='m-shopicon' id='on' data-index="{{index}}" bindtap='change_stars' data-type="technology"></image>
+          </block>
+          <block wx:for="{{5-technology_stars}}" wx:key="index">
+            <image src='../../../images/star_no.png' mode='widthFix' class='m-shopicon' data-index="{{index}}" bindtap='change_stars' data-type="technology"></image>
+          </block>
+        </view>
+      </view>
+      <view class='flex mb24'>
+        <text>项目效果</text>
+        <view class='ml24'>
+          <block wx:for="{{Effect_stars}}" wx:key="index">
+            <image src='../../../images/star-icon@2x.png' mode='widthFix' class='m-shopicon' id='on' data-index="{{index}}" data-type="Effect" bindtap='change_stars'></image>
+          </block>
+          <block wx:for="{{5-Effect_stars}}" wx:key="index">
+            <image src='../../../images/star_no.png' mode='widthFix' class='m-shopicon on' data-index="{{index}}" data-type="Effect" bindtap='change_stars'></image>
+          </block>
+        </view>
+      </view>
+      <textarea placeholder='可以在这里填写评价备注哦~' class='m-remarks' bindinput='appraise'></textarea>
+    </view>
+  </view>
+  
+  <view class='m-submitBtn' bindtap='submit_appraise'>提交评价</view>
+  <view class='m-complain' bindtap='call'>投诉电话：{{tel}}</view>
+</view>

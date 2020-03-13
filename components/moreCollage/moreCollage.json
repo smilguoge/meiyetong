@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "core":"../toCollageBtn/toCollageBtn"
+  }
+}

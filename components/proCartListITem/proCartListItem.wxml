@@ -1,0 +1,18 @@
+<!--components/proCartListITem/proCartListItem.wxml-->
+<view class='flex m-proListitem'>
+  <image src='{{listByKind.pic ? listByKind.pic : "../../images/defaultImg@2x.png"}}' class='m-proImg'></image>
+  <view class='flexcell m-proItem'>
+    <text>{{listByKind.GoodsName || listByKind.CardKindName}}</text>
+    <view class='grayColor' wx:if="{{listByKind.GoodsSales >= 0}}">销量：{{listByKind.GoodsSales}}</view>
+    <view class='justify-flex'>
+      <view class='orangeColor'>
+        ￥{{listByKind.Price || listByKind.SellMoney}}
+      </view>
+      <!-- <view class='flex m-cartIpt' wx:if="{{false}}">
+        <text bindtap='minusNum'>-</text>
+        <input type='number' value='1' bindblur='iptNum'></input>
+        <text bindtap='addNum' class='m-addipt'>+</text>
+      </view> -->
+    </view>
+  </view>
+</view>

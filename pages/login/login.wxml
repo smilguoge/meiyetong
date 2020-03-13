@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<image src='{{BASE_url+bannerImg}}' mode='widthFix' class='m-topimg mb24'></image>
+
+<view class='bgWhite flex m-txt'>
+  <view>手机</view>
+  <input type='number' placeholder='请输入手机号码' bindinput='telphoneIpt'></input>
+  <button bindtap='sendCode' wx:if="{{!isResend}}">发送验证码</button>
+  <button wx:else>重新发送({{smgTime}})</button>
+</view>
+<view class='bgWhite flex m-txt'>
+  <view>验证码</view>
+  <input type='text' placeholder='请输入验证码' bindinput='smgCodeIpt'></input>
+</view>
+<view class='bgWhite flex m-txt'>
+  <view>门店：</view>
+  <picker bindchange="bindPickerChange" value="{{shoplist[index].Shop}}" range="{{shoplist}}" range-key="Shop">
+    <view wx:if="{{index == null}}" class="picker">点击选择</view>
+    <view wx:if="{{index != null}}" class="picker">{{shoplist[index].Shop}}</view>
+  </picker>
+</view>
+
+<button class='m-loginbtn' bindtap='loginbtn'>登录</button>

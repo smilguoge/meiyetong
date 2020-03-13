@@ -1,0 +1,38 @@
+<!--pages/appointmentDay/appointmentDay.wxml-->
+<view class='boxPadding24 flex appointDate'>
+  <text>预约日期</text>
+  <view class='chooseDateView flex'>
+    <image src='../../images/calendar@2x.png' mode='widthFix' class='calendarIcon'></image>
+    <!-- <text>2018-07-16</text> -->
+    <picker mode="date" value="{{calendar}}" end="2099/09/01" bindchange="bindDateChange">
+    <view class="picker">
+      {{calendar}}
+    </view>
+  </picker>
+  </view>
+</view>
+<view class='chooseTitle'>
+  <image src='../../images/oclock@2x.png' mode='widthFix'></image>
+  <text>选择时间</text>
+</view>
+<view class='timeList'>
+  <block wx:for="{{timeList}}" wx:key="index" wx:for-item="timeitems">
+      <block wx:if="{{timeitems.ishow}}">
+        <view class='{{timeitems.isselected ? "active":""}}' bindtap="chooseTime" data-index='{{index}}' data-stime='{{timeitems.stime}}' data-etime='{{timeitems.etime}}'>{{timeitems.stime}} ~ {{timeitems.etime}}</view>
+      </block>
+  </block>
+</view>
+<view class='chooseTitle'>
+  <image src='../../images/user@2x.png' mode='widthFix'></image>
+  <text>选择技师</text>
+</view>
+<view class='technicianList'>
+  <block wx:for="{{technicianList}}" wx:key="index" wx:for-item="techitems">
+    <view class='technician' bindtap='chooseTechnician' data-index='{{index}}' data-id='{{techitems.Id}}' data-name='{{techitems.Name}}'>
+      <image class='technicianImg' src='{{techitems.headImg?techitems.headImg:"../../images/my.png"}}'></image>
+      <view>{{techitems.Name}}</view>
+      <image class='chooseIcon' src='{{index==technicianIdx ? chooseIcon2:chooseIcon}}' mode='widthFix'></image>
+    </view>
+  </block>
+</view>
+<view class='nextBtn' bindtap='nextBtn'>下一步</view>

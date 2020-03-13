@@ -1,0 +1,21 @@
+/* components/payType/payType.wxss */
+@import "../../app.wxss";
+.payTypeBox{
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 68;
+  text-align: center;
+  background: #f2f2f2;
+}
+.payTypeBox text{
+  background: white;
+  font-size: 28rpx;
+  color: #666;
+}
+.payTypeBox view{
+  background: white;
+  margin-top: 10rpx;
+  line-height: 80rpx;
+  font-size: 38rpx;
+}

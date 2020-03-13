@@ -1,0 +1,28 @@
+/* pages/awardDetail/awardDetail.wxss */
+@import "../mine/myRecommend/myRecommend.wxss";
+.m-awardTab{
+  line-height: 60rpx;
+  background: white;
+  padding: 24rpx 0;
+  margin-bottom: 24rpx;
+}
+.m-awardTab image{
+  width: 56rpx;
+}
+.m-awardTab text{
+  font-size: 36rpx;
+}
+.m-calendar{
+  width: 40rpx;
+}
+.m-sure{
+  border-radius: 40rpx;
+  color: white;
+  background: #4fd2c2;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+#end{
+  margin-left: 10%
+}

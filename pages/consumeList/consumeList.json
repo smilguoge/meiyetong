@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "consumeItem":"consumeItem/consumeItem",
+    "noneList": "../../components/noneList/noneList"
+  }
+}

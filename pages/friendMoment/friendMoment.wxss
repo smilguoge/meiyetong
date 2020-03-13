@@ -1,0 +1,26 @@
+/* pages/friendMoment/friendMoment.wxss */
+
+.m-video video{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.m-imgList{
+  flex-wrap: wrap;
+}
+.m-imgList view{
+  width: 100%;
+  /* width: 48%; */
+  /* margin-left: 1%; */
+  margin-bottom: 24rpx;
+  color: #333;
+  background: white;
+}
+.m-imgList image{
+  width: 100%;
+}
+.m-imgList text{
+  font-size: 30rpx;
+  padding: 20rpx 20rpx;
+  display: inline-block;
+}

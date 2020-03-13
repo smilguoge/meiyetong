@@ -1,0 +1,56 @@
+/* pages/jifenMall/template/jifenTab.wxss */
+@import '../../../app.wxss';
+.m-tabbox{
+   /* 滚过初始位置时自动吸顶 */
+  position: -webkit-sticky;
+  position: sticky;
+   /* 吸顶时的定位 */
+  top: 0;
+  left: 0;
+   /* z比下方所有z高 */
+  z-index: 9999;
+  margin-bottom: 20rpx;
+}
+.m-tab{
+  background: white;
+}
+.m-triangel{
+  width: 0;
+  height: 0;
+  border-top: 16rpx solid #666;
+  border-left: 16rpx solid transparent;
+  border-right: 16rpx solid transparent;
+  margin-left: 10rpx;
+  overflow: hidden;
+  vertical-align: top;
+  display:inline-block;
+  margin-top: 14rpx;
+}
+.m-active{
+  color: #fd3d71;
+}
+.m-active .m-triangel{
+  border-top-color: #fd3d71;
+}
+.m-tabitem{
+  background: white;
+  line-height: 60rpx;
+}
+.flexcell view{
+  display:inline-block;
+}
+.m-tabcont{
+  position: absolute;
+  top: 88rpx;
+  left: 0; right: 0;
+  z-index: 2;
+}
+.m-gou{
+  width: 15rpx;
+  height: 30rpx;
+  border-right: 4rpx solid #fd3d71;
+  border-bottom: 4rpx solid #fd3d71;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+}

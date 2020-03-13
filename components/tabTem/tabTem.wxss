@@ -1,0 +1,34 @@
+/* components/tabTem/tabTem.wxss */
+@import '../../app.wxss';
+
+.m-momentTop{
+  background: white;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 30rpx;
+   /* 滚过初始位置时自动吸顶 */
+  position: -webkit-sticky;
+  position: sticky;
+   /* 吸顶时的定位 */
+  top: 0;
+  left: 0;
+   /* z比下方所有z高 */
+  z-index: 9999;
+  margin-bottom: 20rpx;
+}
+.m-momentTop view.active{
+  color: #4fd2c2;
+  position: relative;
+}
+.m-momentTop view.active::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  content: '';
+  width: 20%;
+  height: 4rpx;
+  background: #4fd2c2;
+}

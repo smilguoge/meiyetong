@@ -1,0 +1,30 @@
+/* pages/shop/template/shopItem.wxss */
+.m-shop-item{
+  width:337rpx;
+  height:464rpx;
+  display:inline-block;
+  margin-left:3%;
+}
+.m-shop-item image{
+  width:100%;
+  height:338rpx;
+}
+.m-shop-item .text{
+  font-size:26rpx;
+  margin-top:6%;
+  line-height:26rpx;
+  height:49rpx;
+}
+.m-shop-item text{
+  color:#fc7396;
+  font-size:32rpx;
+}
+.m-shop-item .text text{
+  border-radius: 3pt;
+  background-color: #fee8ef;
+  color: #ef6790;
+  text-align: center;
+  padding: 7rpx 17rpx;
+  float: right;
+  font-size:26rpx;
+}

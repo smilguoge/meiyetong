@@ -1,0 +1,221 @@
+/* pages/mine/mine.wxss */
+
+.over{
+  overflow: hidden;
+  background: white;
+}
+.m-header{
+  height: 300rpx;
+  width: 160%;
+  margin-left: -30%;
+  background: -webkit-linear-gradient(left, #fe706b, #fd3e71);
+  background: linear-gradient(to right, #fe706b, #fd3e71);
+  background-color: #fd3e71;
+  border-radius: 0 0 100% 100%;
+}
+.m-mineheader{
+  width:80%;
+  min-height:177rpx;
+  background:white;
+  border-radius:10rpx;
+  margin:0rpx auto;
+  margin-top:-121rpx;
+  border:1px solid #f8f8f8;
+  margin-bottom:35rpx;
+  box-shadow:0rpx 0rpx 3rpx #f8f8f8;
+
+}
+.m-mineheadimg{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 100%;
+  border: 8rpx solid rgba(255, 255, 255, 0.6);
+  margin-top: -66rpx;
+  margin-bottom: 16rpx;
+}
+.m-username{
+  font-size: 36rpx;
+  color: rgb(17, 17, 17);
+}
+.m-txt{
+  background: white;
+  font-size: 26rpx;
+  padding: 24rpx;
+  margin-top: 20rpx;
+}
+.m-menulist{
+  padding: 24rpx;
+  flex-wrap: wrap;
+  background: white;
+}
+.m-menulist view{
+  width: 25%;
+  text-align: center;
+  margin-bottom: 24rpx;
+  font-size: 26rpx;
+  color: rgb(102, 102, 102);
+}
+.m-menulist view image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 26rpx;
+}
+
+/* 花瓣和积分 */
+.m-flowerAjifen{
+  text-align: center;
+  padding-bottom: 24rpx;
+}
+.m-flowerAjifen view{
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 10rpx;
+  border-radius: 80rpx;
+}
+.m-flowerAjifen view image{
+  width: 40rpx;
+  margin-right: 10rpx;
+}
+/* 我的订单 */
+.m-ordermenu{
+  position: relative;
+}
+.m-ordermenu text{
+  position: absolute;
+  top: -20rpx;
+  right: 40rpx;
+  z-index: 2;
+  background: #fe706b;
+  color: white;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 100%;
+  font-size: 20rpx;
+}
+
+/* 漂浮 */
+.fixed{
+  position: fixed;
+  /* right: 10rpx;
+  bottom: 10%; */
+  z-index: 3;
+}
+.fixed image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 100%;
+  box-shadow: 0rpx 0rpx 10rpx #f8f8f8;
+}
+
+.m-recommend-table{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  text-align: center;
+}
+.m-recommend-table .m-close_serve{
+    position: fixed;
+    top: 12%;
+    right: 6%;
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50%;
+}
+.m-recommend-table .m-recommend-content{
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    z-index: 600;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 auto;
+    width: 85%;
+    height: 220pt;
+    border-radius: 5pt;
+    background-color: #fff;
+    color: #333;
+}
+.m-recommend-table .m-recommend-content .content-title{
+    height: 100rpx;
+    color: #000;
+    letter-spacing: 2pt;
+    font-weight: 400;
+    font-size: 32rpx;
+    line-height: 100rpx;
+}
+.m-recommend-table .m-list{
+    clear: both;
+    padding: 0 1pc;
+    height: 55pt;
+    border-bottom: 1px solid #f2f2f2;
+}
+.m-recommend-table .m-list .m-left{
+  float: left;
+  width: 75%;
+}
+.m-recommend-table .m-list .m-left .m-number{
+  float: left;
+  width: 23%;
+  height: 55pt;
+  color: #b0b0b0;
+  text-align: left;
+  font-size: 11pt;
+  line-height: 55pt;
+}
+.m-recommend-table .m-list:first-child .m-left .m-number {
+    color: #99f;
+}
+.m-recommend-table .m-list:nth-child(2) .m-left .m-number {
+    color: #ffa800;
+}
+.m-recommend-table .m-list:nth-child(3) .m-left .m-number {
+    color: #ff002a;
+}
+.m-recommend-table .m-list .m-left image{
+  float: left;
+  margin-top: 15pt;
+  width: 30pt;
+  height: 30pt;
+  border-radius: 25pt;
+}
+.m-recommend-table .m-list .m-left .m-text{
+    float: left;
+    margin-top: 14pt;
+    margin-left: 5%;
+    width: 47%;
+    text-align: left;
+}
+.m-recommend-table .m-list .m-left .m-text view:first-child{
+    margin-bottom: 4pt;
+}
+.m-recommend-table .m-list .m-left .m-text view{
+    overflow: hidden;
+    margin-left: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.m-recommend-table .m-list .m-left .m-text view:last-child{
+  color: #999;
+  font-size: 10pt;
+}
+.m-recommend-table .m-list .m-right{
+  float: right;
+}
+.m-recommend-table .m-list .m-right .m-button{
+  float: right;
+  margin-top: 21pt;
+  padding: 4% 0;
+  width: 43pt;
+  border: 1px solid #4fd2c2;
+  border-radius: 5pt;
+  color: #4fd2c2;
+  text-align: center;
+  font-size: 10pt;
+}

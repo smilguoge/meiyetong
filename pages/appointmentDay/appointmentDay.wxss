@@ -1,0 +1,100 @@
+/* pages/appointmentDay/appointmentDay.wxss */
+
+page{
+  background: #f2f2f2;
+  padding-bottom: 60rpx;
+}
+.boxPadding24{
+  padding: 0 24rpx;
+}
+.chooseDateView{
+  margin-left: 24rpx;
+  background: #fafafa;
+  border: 2rpx solid #e6e6e6;
+  border-radius:80rpx;
+  width: 274rpx;
+  padding: 0 24rpx;
+  color: #4d4d4d;
+}
+.appointDate{
+  height: 80rpx;
+  background: white;
+  line-height: 80rpx;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+}
+.calendarIcon{
+  width: 40rpx;
+  margin-right: 18rpx;
+}
+
+.chooseTitle{
+  padding: 24rpx;
+  font-size: 28rpx;
+}
+.chooseTitle image{
+  width: 40rpx;
+  margin-right: 18rpx;
+}
+.timeList{
+  background: white;
+  padding-top: 20rpx;
+  font-size: 30rpx;
+  color: rgb(77, 77, 77);
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-wrap: wrap;
+}
+.timeList view{
+  background: #fafafa;
+  border: 2rpx solid #e6e6e6;
+  border-radius: 30rpx;
+  padding: 12rpx 0;
+  display: inline-block;
+  margin-bottom: 20rpx;
+  margin-left: 2%;
+  width: 30%;
+  text-align: center;
+}
+.timeList view.active{
+  background: #fd3d71;
+  color: white;
+}
+/* 选择技师 */
+.technicianList{
+  background: white;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: rgb(77, 77, 77);
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-wrap: wrap;
+}
+.technician{
+  width: 22.5%;
+  margin-right: 2%;
+  position: relative;
+  border: 2rpx solid #e6e6e6;
+  padding: 20rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.technician:nth-child(4n){
+  margin-right: 0;
+}
+.technicianImg{
+  width: 106rpx;
+  height: 106rpx;
+  border-radius: 100%;
+  margin-bottom: 20rpx;
+}
+.chooseIcon{
+  width: 30rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 2;
+}

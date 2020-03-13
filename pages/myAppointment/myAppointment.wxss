@@ -1,0 +1,45 @@
+/* pages/myAppointment/myAppointment.wxss */
+.tabMenu{
+  position: fixed;
+  top: 0;
+  left: 0; right: 0;
+  z-index: 3;
+}
+.myAppointItem{
+  background: white;
+  padding: 24rpx;
+  border-radius: 10rpx;
+  margin: 20rpx;
+  font-size: 28rpx;
+}
+.m-itemTxt{
+  padding: 24rpx 0;
+  border-bottom: 2rpx dashed #f2f2f2;
+  justify-content: space-between;
+}
+.m-itemTxt view{
+  height: 38rpx;
+  width: 145rpx;
+  border-radius: 20rpx;
+  color: #4fd2c2;
+  border: 2rpx solid #4fd2c2;
+  text-align: center;
+  line-height: 38rpx;
+}
+.appointForm{
+  color: #333;
+  line-height: 80rpx;
+  position: relative;
+}
+.appointForm view image{
+  width: 34rpx;
+  margin-right: 16rpx;
+}
+.serviced{
+  position: absolute;
+  top: 50%;
+  right: -20rpx;
+  z-index: 2;
+  width:180rpx;
+  transform: translateY(-50%);
+}

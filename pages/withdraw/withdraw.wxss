@@ -1,0 +1,106 @@
+/* pages/withdraw/withdraw.wxss */
+.m-content{
+  width: 94%;
+  margin-left: 3%;
+  background: #fff;
+}
+.m-content .m-main{
+  padding: 40rpx;
+}
+.m-content .m-top .top-title{
+  position: relative;
+}
+.m-content .m-top .top-title .title-left{
+  font-size: 33rpx;
+}
+.m-content .m-top .top-title .title-left image{
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.m-content .m-top .top-title .title-right{
+  background: rgb(79,210,194);
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  padding: 5rpx 10rpx;
+  border-radius: 15rpx;
+  font-size: 24rpx;
+  color: white;
+}
+.m-content .m-top .top-num{
+  margin-top: 35rpx;
+  font-size: 50rpx;
+  position: relative;
+}
+.m-content .m-center{
+  border-bottom: 1px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
+  padding: 30rpx 0rpx;
+  font-size: 30rpx;
+  color: rgb(79,210,194);
+  margin-top: 18rpx;
+}
+.m-content .m-center .center-cash{
+  margin-top: 15rpx;
+}
+.m-content .m-bottom .b-cell{
+  line-height: 100rpx;
+  height: 100rpx;
+  color: rgb(102,102,102)
+}
+.m-content .m-bottom .b-cell .cell-left{
+  float: left;
+}
+.m-content .m-bottom .b-cell .cell-right{
+  float: right;
+  color: rgb(90,179,255);
+}
+.m-content .m-bottom .b-input input{
+  border: 1px solid #e2e2e2;
+  padding: 10rpx 30rpx;
+  margin-bottom: 25rpx;
+}
+.m-content .m-bottom .b-input button{
+  color: white;
+  background: rgb(79,210,194);
+  border-radius: 50rpx;
+  font-size: 30rpx;
+}
+.withdraw_rule{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f2f2f2;
+  z-index: 5;
+}
+.withdraw_rule .rule-top{
+  background: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 35rpx;
+  border-radius: 10rpx;
+  width: 90%;
+  margin-left: 5%;
+}
+.withdraw_rule .rule-top image{
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 5rpx;
+}
+.withdraw_rule .rule-content{
+  width: 90%;
+  margin-left: 5%;
+  background: #fff;
+  margin-top: 1px;
+}
+.withdraw_rule .rule-content .content-text{
+  padding: 40rpx 50rpx; 
+  color: rgb(102, 102, 102);
+  text-indent:2em;
+  font-size: 25rpx;
+}

@@ -1,0 +1,29 @@
+/* components/showConfirm/showConfirm.wxss */
+@import "../../app.wxss";
+
+.confirmBox{
+  background: white;
+  border-radius: 20rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 68;
+  transform: translate(-50%,-50%);
+  width: 80%;
+}
+.confirmBtn{
+  display: flex;
+  align-items: center;
+  border-top: 2rpx solid #f2f2f2;
+}
+.confirmBtn text{
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #666;
+}
+.confirmBtn text.sureEvent{
+  color: #fd3d71;
+  border-left: 2rpx solid #f2f2f2;
+}

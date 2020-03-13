@@ -1,0 +1,47 @@
+/* pages/proAndCartClass/proAndCartClass.wxss */
+.left{
+  width: 178rpx;
+  height: 100vh;
+  overflow-y: scroll;
+  background: #f7f7f7;
+}
+.left view{
+  border-left: 4rpx solid #f2f2f2;
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #666666;
+  font-size: 30rpx;
+  padding-left: 24rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  text-align: center;
+}
+.left view.active{
+  color: rgb(51, 51, 51);
+  background: white;
+  border-left-color: #fd3d71;
+}
+.right{
+  background: white;
+  height: 100vh;
+  overflow-y: scroll;
+  color: #333;
+  font-size: 30rpx;
+}
+.rightTitle{
+  padding: 20rpx 0;
+  color: #666666;
+  padding-left: 18rpx;
+  background: white;
+   /* 滚过初始位置时自动吸顶 */
+  position: -webkit-sticky;
+  position: sticky;
+   /* 吸顶时的定位 */
+  top: 0;
+  left: 0;
+   /* z比下方所有z高 */
+  z-index: 9999;
+}
+.rightTitle text{
+  border-left: 4rpx solid #fd3d71;
+  margin-right: 10rpx;
+}

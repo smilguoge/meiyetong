@@ -1,0 +1,14 @@
+<!--pages/mineseckill/mineseckill.wxml-->
+<tabTem momentTab="{{momentTab}}" bind:tabEvent='tabEvent' type_num="{{type_num}}"></tabTem>
+<scroll-view scroll-y="true" bindscrolltolower="scrollbottom">
+<block wx:for="{{list}}" wx:key="index">
+  <view class='mb24'>
+    <orderItem bindtap="toOrderDetail" order="{{item}}" data-index="{{index}}" type_num="{{type_num}}" bind:del_order_son='del_order_father'></orderItem>
+  </view>
+</block>
+<block>
+  <noneList wx:if="{{list.length ==0}}">
+    <view>暂无订单</view>
+  </noneList>
+</block>
+</scroll-view>

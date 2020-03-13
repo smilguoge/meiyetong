@@ -1,0 +1,82 @@
+<!--pages/seckillProject.wxml-->
+<!-- <view class='m-canvasShodaw {{isCanvas?"db":""}}' bindlongpress='canvas2img'>
+  <view class='m-shadow' bindtap='closeCanvas'></view>
+  <canvas class='m-canvas' canvas-id="firstCanvas"></canvas>
+</view> -->
+
+<import src="../../wxParse/wxParse.wxml"/><!-- 引入wxParse -->
+
+<import src="../../template/canvas.wxml"/>  <!-- 引入canvas模板 -->
+
+<view wx:if="{{isCanvas}}">
+  <template is="canvasTem" data="{{...detail}}"/>
+</view>
+
+
+<!-- 图片 -->
+<view class='m-imgShow'>
+  <image src='{{BASE_url+detail.Cover}}' mode='widthFix' class='collage-img'></image>
+
+  <view class='m-count'>
+    <view class='m-countLeft'>
+      <p>￥</p>
+      <rich-text>{{detail.Price}}</rich-text>
+      <span>原价 ￥{{detail.OriginalPrice}}</span>
+    </view>
+    <view class='m-countRight'>
+        距结束
+        <rich-text>{{day}}</rich-text>
+        :
+        <rich-text>{{hour}}</rich-text>
+        :
+        <rich-text>{{minute}}</rich-text>
+        :
+        <rich-text>{{second}}</rich-text>
+    </view>
+  </view>
+</view>
+
+<!-- 中部详情 -->
+<view class='bgWhite mb24'>
+  <view class='m-title'>
+    {{detail.ProjectName || "美业通商品"}}
+  </view>
+  <view class='m-price'>
+    门店：{{detail.ShopName || "美业通"}}
+  </view>
+  <view class='flex m-price right'>
+    <view>
+      <!-- <rich-text name="p" bindtap='showCanvas'><image src='../../images/scancode.png' mode='widthFix' style='width:60rpx;'></image></rich-text> -->
+      已售{{detail.BuyNumber || 0}}
+    </view>
+  </view>
+
+</view>
+
+
+<!-- 商品详情 -->
+<view class='collage-detal'>
+  <view class='detailTit mb24'>商品详情</view>
+  <view style='width:100%'>
+    <!-- {{detail.Detail}} -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+<view class='collageFixed'>
+  <view class='m-bugNum flex'>
+    <text bindtap='minusNum'>-</text>
+    <input type='number' value='{{num}}' bindblur='inputNum'></input>
+    <text bindtap='addNum'>+</text>
+  </view>
+  <view class='buyTogether' bindtap='goPage'>
+    <rich-text name="p">立即购买</rich-text>
+  </view>
+</view>
+
+
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+
+<!-- 获取手机号授权 -->
+<accreditPhone wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></accreditPhone>

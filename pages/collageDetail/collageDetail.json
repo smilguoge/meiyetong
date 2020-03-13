@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "moreCollage": "../../components/moreCollage/moreCollage",
+    "buySelf": "../../components/showConfirm/showConfirm",
+    "payType": "../../components/payType/payType",
+    "toCollageBtn":"../../components/toCollageBtn/toCollageBtn",
+    "accredit":"../../components/accredit/accredit",
+    "accreditPhone": "../../components/accreditPhone/accreditPhone"
+  }
+}

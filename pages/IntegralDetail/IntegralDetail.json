@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "accredit": "../../components/accredit/accredit",
+    "accreditPhone": "../../components/accreditPhone/accreditPhone",
+    "jifenTab": "template/jifenTab",
+    "jifenItem": "jifenItem/jifenItem",
+    "noneList": "../../components/noneList/noneList"
+  }
+}

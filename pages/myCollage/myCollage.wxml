@@ -1,0 +1,34 @@
+<!--pages/myCollage/myCollage.wxml-->
+<!-- 我的拼团列表 -->
+<mineTab tabMenu="{{tabMenu}}" bind:chooseTab="chooseTab" class="tabMenu"></mineTab>
+
+<view style='margin-top:100rpx;'>
+<block wx:for="{{itemsdata}}" wx:key="index" wx:for-item="itemsdata">
+  <view class='mb24' bindtap='toCollageShare' data-spelling_id='{{itemsdata.id}}'>
+    <view class='m-itemTxt flex'>
+      <block wx:if="{{tabIdx==0}}">
+        <text class='orangeColor' >待分享，差{{itemsdata.number}}人</text>
+      </block>
+      <block wx:elif="{{tabIdx==1}}">
+        <text class='orangeColor' >拼团成功</text>
+      </block>
+      <block wx:else="{{tabIdx==2}}">
+        <text class='orangeColor' >拼团失败，已退款</text>
+      </block>
+      <view class='grayColor' hidden>2018-10-19 18:40</view>
+    </view>
+    <view class='flex collageCont'>
+      <image src='{{itemsdata.Cover}}'></image>
+      <view class='flexcell'>{{itemsdata.ProjectName}}</view>
+      <view class='collageNum'>
+        <text class='grayColor'>x{{itemsdata.num || '1'}}</text>
+        <view>￥{{itemsdata.Price}}</view>
+      </view>
+    </view>
+    <view class='collagePay'>实付：￥0.01（含运费）</view>
+    <block wx:if="{{tabIdx==2}}">
+      <view class='collagePay delBtn'><text>删除订单</text></view>
+    </block>
+  </view>
+</block>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/myAppointment/myAppointment.wxml-->
+<!-- 我的预约列表 -->
+<mineTab tabMenu="{{tabMenu}}" bind:chooseTab="chooseTab" class="tabMenu"></mineTab>
+
+<view style='margin-top:100rpx;'>
+<block wx:for="{{itemsdata}}" wx:key="index" wx:for-item="itemsdata">
+  <view class='myAppointItem'>
+    <view class='m-itemTxt flex'>{{itemsdata.shop}}<view bindtap='cancelappointment' data-id='{{itemsdata.ID}}'>取消预约</view></view>
+    <view class='appointForm'>
+      <view>
+	      <image src='../../images/appoint-technician@2x.png' mode='widthFix'></image>
+	      技师：{{itemsdata.employee}}
+      </view>
+      <view>
+	      <image src='../../images/appoint-project@2x.png' mode='widthFix'></image>
+	      预约项目：{{itemsdata.lprojectname}}
+      </view>
+      <view>
+	      <image src='../../images/appoint-time@2x.png' mode='widthFix'></image>
+	      预约时间：{{itemsdata.PlanWakeUpDate}}-{{itemsdata.PlanWakeUpDateEnd}}
+      </view>
+      <block wx:if="{{tabIdx==0}}">
+      	<image src='../../images/success.png' mode='widthFix' class='serviced'></image>
+      </block>
+      <block wx:elif="{{tabIdx==1}}">
+      	<image src='../../images/success.png' mode='widthFix' class='serviced'></image>
+      </block>
+      <block wx:else="{{tabIdx==2}}">
+      	<image src='../../images/serviced@2x.png' mode='widthFix' class='serviced'></image>
+      </block>
+    </view>
+  </view>
+</block>
+<block>
+  <noneList wx:if="{{itemsdata.length == 0 || itemsdata == null}}">
+    <view>暂无预约消息</view>
+  </noneList>
+</block>
+</view>

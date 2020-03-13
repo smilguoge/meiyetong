@@ -1,0 +1,62 @@
+/* pages/jifenCenter/jifenCenter.wxss */
+.m-jifenTop{
+  text-align: center;
+  position: relative;
+  padding: 24rpx;
+  background: -webkit-linear-gradient(top, #fff, #ffe4ec);
+  background: linear-gradient(to bottom, #fff, #ffe4ec);
+  background-color: #f9635c;
+  font-size: 34rpx;
+}
+.m-jifenIcon{
+  width: 208rpx;
+  margin-top: 40rpx;
+  margin-bottom: 24rpx
+}
+.m-jifenmall{
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+  z-index: 2;
+  color: white;
+  background: #ff94b3;
+  border-radius: 30rpx;
+  padding: 10rpx 24rpx;
+  font-size: 24rpx;
+}
+.m-jifenmall image{
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.m-momentTop{
+  background: white;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 30rpx;
+   /* 滚过初始位置时自动吸顶 */
+  position: -webkit-sticky;
+  position: sticky;
+   /* 吸顶时的定位 */
+  top: 0;
+  left: 0;
+   /* z比下方所有z高 */
+  z-index: 9999;
+  margin-bottom: 20rpx;
+}
+.m-momentTop view.active{
+  color: #f9635c;
+  position: relative;
+}
+.m-momentTop view.active::after{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  content: '';
+  width: 20%;
+  height: 4rpx;
+  background: #f9635c;
+}

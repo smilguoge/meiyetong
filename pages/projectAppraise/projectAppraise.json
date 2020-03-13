@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "tabTem":"../../components/tabTem/tabTem",
+    "appraiseCont":"appraiseCont/appraiseCont",
+    "noneList": "../../components/noneList/noneList"
+  }
+}

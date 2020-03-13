@@ -1,0 +1,19 @@
+<!--pages/consumeList/consumeItem/consumeItem.wxml-->
+<view class='p24 consumeItem'>
+  <view class='justify-flex mb24'>
+    <text>金额</text>
+    <view class='orangeColor'>{{consumeData.SellMoney}}</view>
+  </view>
+  <view class='justify-flex grayColor'>
+    <text>类型</text>
+    <text>{{consumeData.style}}</text>
+  </view>
+  <view class='justify-flex grayColor'>
+    <text>名称</text>
+    <text>{{consumeData.CardType}}</text>
+  </view>
+  <view class='justify-flex grayColor'>
+    <text>时间</text>
+    <text>{{consumeData.RegisterDate}}</text>
+  </view>
+</view>

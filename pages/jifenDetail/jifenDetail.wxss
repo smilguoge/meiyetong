@@ -1,0 +1,2 @@
+/* pages/jifenDetail/jifenDetail.wxss */
+@import '../projectDetail/projectDetail.wxss';

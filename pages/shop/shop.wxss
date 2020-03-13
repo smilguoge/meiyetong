@@ -1,0 +1,178 @@
+
+page{
+  background: #f2f2f2;
+}
+.ml{
+  margin-left: 60rpx;
+}
+.mr{
+  margin-right: 60rpx;
+}
+swiper{
+  height: 360rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.m-shopMenu{
+  text-align: center;
+  padding: 25rpx 0;
+  font-size: 30rpx;
+  color: #999;
+  background:white;
+}
+rich-text{
+  font-size: 26rpx;
+}
+.m-shopMenu image{
+  width:44%;
+  margin-bottom:15rpx;
+}
+.m-shopproject{
+  padding-top:2%;
+  background: white;
+  margin: 25rpx 0rpx;
+}
+.m-title{
+  padding:20rpx 35rpx;
+}
+.m-title image{
+  height:39rpx;
+  width:85rpx;
+}
+.m-title text{
+  font-size:27rpx;
+  color:#999999;
+  margin-left:3%;
+
+}
+.m-title rich-text{
+  float: right;
+  height: 25pt;
+  line-height: 23pt;
+  color:#999999;
+}
+.m-shop-items{
+  padding:0rpx 7rpx;
+  width:97.9%;
+  white-space:nowrap;
+  margin-top:25rpx;
+  padding-bottom:3%;
+  height:451rpx;
+}
+.m-shop-item{
+  width:337rpx;
+  height:464rpx;
+  display:inline-block;
+  margin-left:3%;
+}
+.m-shop-item image{
+  width:100%;
+  height:338rpx;
+}
+.m-shop-item .text{
+  font-size:26rpx;
+  margin-top:6%;
+  line-height:26rpx;
+  height:49rpx;
+}
+.m-shop-item text{
+  color:#fc7396;
+  font-size:27rpx;
+}
+
+.m-shop-item text.pin_price{
+  float: right;
+  margin-top: 3rpx;
+}
+
+
+.m-shop-item .text text{
+  border-radius: 3pt;
+  background-color: #fee8ef;
+  color: #ef6790;
+  text-align: center;
+  padding: 7rpx 17rpx;
+  float: right;
+  font-size:26rpx;
+}
+
+
+
+.m-collageTitel{
+  text-align: center;
+  color: #333;
+  font-size: 36rpx;
+}
+.m-collageTitel image{
+  width: 40rpx;
+}
+.m-collageList{
+  flex-wrap: wrap;
+  padding: 24rpx;
+}
+.m-collageList collageItem{
+  margin-left: 20rpx;
+  margin-bottom: 24rpx;
+}
+.m-collageList collageItem:nth-child(2n-1){
+  margin-left: 0;
+}
+
+.shop-title{
+  position: relative;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.shop-title image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+}
+.shop-title text{
+  position: absolute;
+  top: 0; right: 10rpx;
+  height: 100%;
+  font-size: 26rpx;
+  color: #999;
+}
+.m-beautician{
+  display: flex;
+}
+.beautician-view{
+  width: 130rpx;
+  padding: 12px 32rpx;
+  font-size: 26rpx;
+}
+.beautician-view .beautician-img{
+  width: 130rpx;
+  height: 132rpx;
+  border-radius: 20rpx;
+}
+.beautician-icon{
+  width: 30rpx;
+}
+.textOver{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #999;
+}
+
+.m-hotProject{
+  padding: 24rpx;
+  flex-wrap: wrap;
+}
+.m-hotItem{
+  width: 338rpx;
+  margin-right: 24rpx;
+  margin-bottom: 24rpx;
+}
+.m-hotItem:nth-child(2n){
+  margin-right: 0;
+}

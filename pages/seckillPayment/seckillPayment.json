@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "buySelf": "../../components/showConfirm/showConfirm"
+  }
+}

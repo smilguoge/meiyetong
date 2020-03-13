@@ -1,0 +1,39 @@
+/* components/accredit/accredit.wxss */
+/**自定义无权限样式**/
+.Accredit_box {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 333;
+    top: 0;
+    left: 0;
+    background: white;
+}
+.Accredit_content {
+    width: 100%;
+    height:101vh;
+}
+.Accredit_img {
+    width: 100%;
+    /* height: 100%; */
+}
+.Accredit_btn {
+    position:fixed;
+    top:74%;
+    left:50%;
+    z-index:999;
+    background:none;
+    transform: translateX(-50%);
+    font-size: 30rpx;
+    border: 2rpx solid #4fd2c2;
+    color: #4fd2c2;
+}
+.Accredit_btn image {
+    width:307rpx;
+    height:71rpx;
+    border:none;
+}
+button::after{
+    border:none;
+}

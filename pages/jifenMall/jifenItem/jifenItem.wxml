@@ -1,0 +1,6 @@
+<!--pages/jifenMall/jifenItem/jifenItem.wxml-->
+<view class='m-jifenItem' data-id="{{project.ID}}" bindtap='go_detail' data-sta="{{project.sta}}">
+  <image src='{{project.project_avatar}}' mode='widthFix'></image>
+  <view>{{project.ProjectName}}</view>
+  <text class='orangeColor'>{{project.Integral}}积分</text>
+</view>

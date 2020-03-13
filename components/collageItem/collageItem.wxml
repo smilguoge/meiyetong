@@ -1,0 +1,22 @@
+<!--components/collageItem/collageItem.wxml-->
+<view class='bgWhite'>
+  <image src='{{collage.Cover}}' class='m-collageItemimg'></image>
+  <view class='collageItem-cont'>
+    <view class='m-collageTitle'>
+    <!-- 1：卡项 2：项目 3：产品 （全部传0或不传） -->
+      <text class='m-collageType' wx:if="{{collage.Type==2}}">项目</text>
+      <text class='m-collageType' wx:elif="{{collage.Type==3}}">产品</text>
+      <text class='m-collageType' wx:elif="{{collage.Type==1}}">卡项</text>
+      <text>{{collage.ProjectName}}</text>
+    </view>
+    <view class='flex m-collage'>
+      <view>
+        <view class='m-price'>￥{{collage.OriginalPrice}}</view>
+        <view class='m-count'>已拼{{collage.HasSpellingNum}}件</view>
+      </view>
+      <view class='toCollage'>
+        去开团 
+      </view>
+    </view>
+  </view>
+</view>

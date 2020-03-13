@@ -1,0 +1,65 @@
+<!--pages/payment/payment.wxml-->
+<!-- 拼团支付页面 -->
+
+<!-- 门店配送，显示配送地址 -->
+ <view class='payCollage addr rightArrow' wx:if="{{isGetbyself}}" bindtap='toAddresslist'>
+    <view class='noAddr' wx:if="{{noAddr}}">您还没有设置收货地址</view>
+    <view wx:else>
+      <view class='mb24'>{{addressDef.Name}} {{addressDef.Phone}}</view>
+      <view class='grayColor'>{{addressDef.Province}} {{addressDef.City}} {{addressDef.Area}} {{addressDef.Address}}</view>
+    </view>
+  </view>
+<view class='payCollage'>
+  <!-- 拼团信息 -->
+  <block wx:for="{{detailList.list}}" wx:key="index">
+  <view class='flex mb24'>
+    <!-- <image src='{{spellingDetial.pic}}' class='collageImg'></image> -->
+    <image src='{{BASE_url+item.pic}}' class='collageImg' ></image><!-- 产品 -->
+    <view class='flexcell collageCont'>
+      <rich-text name="h3">{{item.name}}</rich-text>
+      
+      <text class='orangeColor'>￥{{item.price}}</text>
+    </view>
+    <view>x{{item.quantity}}</view>
+  </view>
+  </block>
+
+  <!-- 产品才有配送或者自提，type=2 -->
+  <view wx:if="{{hasGoods}}">
+    <view class='mb24'>
+      <text class='m-txt'>配送方式</text>
+      <radio-group class="tc" bindchange="typeChange">
+        <label class='m-typebox'>
+          到店自提
+          <radio value="到店自提" checked="{{true}}"/>
+        </label>
+        <label class='m-typebox'>
+          门店配送
+          <radio value="门店配送" checked="{{false}}"/>
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 到店自提显示 -->
+    <view class='mb24' wx:if="{{!isGetbyself}}">
+      
+      <picker bindchange="shopChange" value="{{Shop}}" range="{{shoplist}}" range-key="Shop">
+        <view class="picker">
+          <text class='m-txt'>提取门店</text>
+          <view class='m-typebox' wx:if="{{shoplist.length<1}}">暂无相关门店</view>
+          <view wx:else class='m-typebox'>{{shoplist[index].Shop}}</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<!-- 支付失败弹窗提示 -->
+<buySelf wx:if="{{failPayConfirm}}" bind:cancelEvent="failPaycancelEvent" bind:sureEvent="failPaysureEvent">
+  <view class='buySelf-con'>
+    <view>支付失败</view>
+  </view>
+</buySelf>
+<view class='payBottom'>
+  <view>￥{{detailList.moneyTotal}}</view>
+  <view class='orderPay' bindtap='wxpayment'>订单支付</view>
+</view>

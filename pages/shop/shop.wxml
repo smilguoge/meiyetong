@@ -1,0 +1,111 @@
+<!-- 显示关联的公众号入口 -->
+<official-account bindload="officialload" binderror="officialerror" class="m-official"></official-account>
+<!-- 首页轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}"
+indicator-active-color="{{indicatorDotsActive}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{banner_list.length>0}}">
+  <block wx:for="{{banner_list}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.plug_ad_pic=='' ? '../../images/coverDefault.png' : (item.plug_ad_pic)}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 首页导航栏 -->
+<view class='m-shopMenu flex'>
+  <block wx:for="{{navMenu}}" wx:key="index">
+  <view class='flexcell' data-index='{{index}}' bindtap='chooseMenu'>
+    <image src='{{item.icon}}' mode='widthFix'></image>
+    <rich-text name="p">{{item.name}}</rich-text>
+  </view>
+  </block>
+</view>
+
+<view class='p24' wx:if="{{middle_list.length>0}}">
+  <swiper indicator-dots="{{indicatorDots}}"
+  indicator-active-color="{{indicatorDotsActive}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{banner_list.length>1}}">
+    <block wx:for="{{middle_list}}" wx:key="index">
+      <swiper-item data-url="{{item.plug_ad_url}}" bindtap="toProjectdetail">
+        <image src="{{item.plug_ad_pic=='' ? '../../images/coverDefault.png' : (item.plug_ad_pic)}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 拼团小站 -->
+<view wx:if="{{spelling_list.length>0}}">
+  <view class='m-shopproject'>
+    <view class='m-title' bindtap='toCollage'>
+      <image src='../../images/pin.png'></image>
+      <text>限量拼团，每日必逛</text>
+      <rich-text>拼团小站></rich-text>
+    </view>
+    <view>
+    <scroll-view scroll-x="true" class='m-shop-items'>
+      <block wx:for="{{spelling_list}}" wx:key="index">
+        <view class='m-shop-item' bindtap='toCollagDetail' data-id='{{item.id}}'>
+          <image src='{{item.Cover}}'></image>
+          <view class='text'>
+            {{item.ProjectName}}
+            <text>{{item.Number}}人团</text>
+          </view>
+          <text>￥{{item.OriginalPrice}}</text>
+          <text class='pin_price'>拼价:￥{{item.Price}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    </view>
+  </view>
+</view>
+<!-- 金牌美容师 -->
+<view class='shop-title' bindtap='toBeauticianList'>
+  <image src='../../images/cutline@2x.png' mode='widthFix'></image>
+  <view>金牌美容师</view>
+  <text>更多></text>
+</view>
+
+<scroll-view scroll-x>
+  <view class='m-beautician'>
+    <block wx:for="{{doctor_list}}" wx:key="index">
+    <view class='beautician-view' bindtap='toBeauticianDetail' data-id='{{item.Id}}'>
+      <image class='beautician-img' src='{{item.HeadImg}}'></image>
+      <view class='beautician-name'>{{item.Name}}</view>
+      <view class='textOver'>
+        <image src='../../images/beautician-icon@2x.png' class='beautician-icon' mode='widthFix'></image>
+        {{item.Skill}}
+      </view>
+    </view>
+    </block>
+  </view>
+</scroll-view>
+<!-- 热销项目 -->
+<view wx:if="{{project_list.length>0}}">
+  <view class='shop-title'>
+    <image src='../../images/cutline@2x.png' mode='widthFix'></image>
+    <view>热销项目</view>
+  </view>
+
+  <view class='flex m-hotProject'>
+    <block wx:for="{{project_list}}" wx:key="index">
+    <hotItem class="m-hotItem" hotitem="{{item}}" isGoods="0"></hotItem>
+    </block>
+  </view>
+</view>
+<!-- 热销产品 -->
+<view wx:if="{{goods_list.length>0}}">
+  <view class='shop-title'>
+    <image src='../../images/cutline@2x.png' mode='widthFix'></image>
+    <view>热销产品</view>
+  </view>
+
+  <view class='flex m-hotProject'>
+    <block wx:for="{{goods_list}}" wx:key="index">
+      <hotItem class="m-hotItem" hotitem="{{item}}" isGoods="1"></hotItem>
+    </block>
+  </view>
+</view>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>

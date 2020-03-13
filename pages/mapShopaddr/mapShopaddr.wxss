@@ -1,0 +1,11 @@
+/* pages/mapShopaddr/mapShopaddr.wxss */
+.mapStyle{
+  width: 100%;
+  height: 90vh;
+}
+.addrCon{
+  height: 10vh;
+  justify-content: space-between;
+  padding: 24rpx;
+  line-height: 10vh;
+}

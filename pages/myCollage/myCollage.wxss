@@ -1,0 +1,44 @@
+/* pages/myCollage/myCollage.wxss */
+.tabMenu{
+  position: fixed;
+  top: 0;
+  left: 0; right: 0;
+  z-index: 3;
+}
+.m-itemTxt{
+  justify-content: space-between;
+  background: white;
+  padding: 24rpx;
+  font-size: 24rpx;
+}
+.collageCont{
+  padding: 24rpx;
+  font-size: 28rpx;
+}
+.collageCont image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.collageNum{
+  text-align: right;
+  margin-left: 20rpx;
+}
+.collageNum text{
+  font-size: 24rpx;
+}
+.collagePay{
+  text-align: right;
+  padding: 24rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  background: white;
+}
+.delBtn text{
+  padding: 4rpx 24rpx;
+  display: inline;
+  font-size: 24rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid #999;
+  color: #666;
+}

@@ -1,0 +1,7 @@
+/* pages/consumeList/consumeItem/consumeItem.wxss */
+@import '../../../app.wxss';
+
+.consumeItem{
+  background: white;
+  line-height: 40rpx;
+}

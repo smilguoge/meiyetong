@@ -1,0 +1,47 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+
+<view class='m-addrcont' wx:if="{{orderDetail.shipping_status=='0'}}"><!-- 门店自取 -->
+  <view>
+    配送方式：门店自取
+  </view>
+  <view>
+    自取门店：{{orderDetail.shop_name}}
+  </view>
+</view>
+<view class='flex m-addrcont' wx:else>
+  <image src='../../images/addr@2x.png' mode='widthFix' class='m-addricon'></image>
+  <view class='flexcell'>
+    <view class='justify-flex'>
+      <view class='mb24'>收货人：{{orderDetail.addressData.Name}}</view>
+      <view class='grayColor'>{{orderDetail.addressData.Phone}}</view>
+    </view>
+    <view>收货地址：{{orderDetail.addressData.Province}}
+    {{orderDetail.addressData.City}}
+    {{orderDetail.addressData.Area}}
+    {{orderDetail.addressData.Address}}</view>
+  </view>
+</view>
+
+<view class='mb24'>
+
+  <view class='flex m-ordercont'>
+    <image class='m-orderImg' mode='widthFix' src='{{BASE_url+shopdata.pic}}'></image>
+    <view class='flexcell'>
+      {{shopdata.goodsname}}
+    </view>
+    <view class='tr ml24'>
+      <rich-text name="p" class='grayColor'>x{{shopdata.quantity}}</rich-text>
+      ￥{{shopdata.price}}
+    </view>
+  </view>
+
+  <view class='m-orderAccount'>订单总价： <text class='orangeColor'>￥{{orderDetail.total_amount}}</text></view>
+</view>
+
+<view class='grayColor bgWhite p24'>
+  <view>物流公司：{{orderDetail.ship_company || "暂无"}}</view>
+  <view>物流单号：{{orderDetail.ship_number || "暂无"}}</view>
+  <view>订单编号：{{orderDetail.order_sn}}</view>
+  <view>付款时间：{{orderDetail.add_date}}</view>
+</view>
+

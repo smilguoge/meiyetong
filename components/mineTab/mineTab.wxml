@@ -1,0 +1,9 @@
+<!--components/mineTab/mineTab.wxml-->
+<view class='flex tabbox'>
+  <block wx:for="{{tabMenu}}" wx:key="index">
+    <view class='flexcell {{index==tabIdx ? "active" : ""}}' data-index='{{index}}' bindtap='chooseTab'>
+      {{item}}
+      <progress activeColor="#4fd2c2" percent="100" stroke-width="2" wx:if="{{index==tabIdx}}" />
+    </view>
+  </block>
+</view>

@@ -1,0 +1,72 @@
+/* pages/payment/payment.wxss */
+.payCollage{
+  margin: 24rpx;
+  background: white;
+  border-radius: 20rpx;
+  padding: 24rpx;
+}
+
+/* 配送地址 */
+.addr{
+  padding: 24rpx;
+}
+.rightArrow::after{
+  width: 20rpx;
+  height: 20rpx;
+  right:40rpx;
+}
+.noAddr{
+  text-align: center;
+  padding: 60rpx 0;
+}
+
+.collageImg{
+  width: 120rpx;
+  height: 120rpx;
+}
+.collageCont{
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 20rpx;
+}
+
+.m-txt{
+  color: #999;
+  font-size: 28rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.m-typebox{
+  border-radius: 10rpx;
+  box-shadow: 0rpx 0rpx 16rpx #f8f8f8;
+  min-width: 40%;
+  max-width: 70%;
+  padding: 20rpx 20rpx;
+  font-size: 32rpx;
+  margin-left: 10%;
+  text-align: center;
+}
+.m-typebox:first-child{
+  margin-left: 0;
+}
+.payBottom{
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 2;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  display: flex;
+  background: white;
+}
+.payBottom view{
+  flex:1;
+  color: #fd3d71;
+}
+.payBottom view:nth-child(2) {
+  background: #fd3d71;
+  color: white;
+}

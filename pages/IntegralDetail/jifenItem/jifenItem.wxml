@@ -1,0 +1,9 @@
+<!--pages/jifenMall/jifenItem/jifenItem.wxml-->
+<view class='m-jifenItem'>
+  <view class='jifenItem-left'>{{project.change}}</view>
+  <view class='jifenItem-right'>
+    <view class='orangeColor'>收入来源:{{project.source}}</view>
+    <view class='orangeColor'>时间:{{project.issuetime}}</view>
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<!--pages/jifenCenter/template/jifenItem.wxml-->
+<view class='flex'>
+  <text class='m-dot'></text>
+  <view class='m-jifen'>+78</view>
+  
+  <view class='grayColor flexcell'>
+    获得积分来源：好友Lina消费
+    <rich-text name="p">时间：2018.08.08 17:20</rich-text>
+  </view>
+</view>

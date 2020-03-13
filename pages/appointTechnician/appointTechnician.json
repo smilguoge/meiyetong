@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "dialog": "../../components/dialogTem/dialogTem",
+    "accreditPhone": "../../components/accreditPhone/accreditPhone"
+  }
+}
+
+
+
+

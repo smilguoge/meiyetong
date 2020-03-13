@@ -1,0 +1,53 @@
+/* pages/collage/collage.wxss */
+page{
+  background: #f2f2f2;
+}
+.ml{
+  margin-left: 60rpx;
+}
+.mr{
+  margin-right: 60rpx;
+}
+swiper{
+  height: 360rpx;
+  /* height: auto; */
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.m-collageMenu{
+  text-align: center;
+  padding: 32rpx 0;
+  font-size: 30rpx;
+  color: #333;
+  background: white;
+  margin-bottom: 20rpx;
+}
+.m-collageMenu .flexcell.active{
+  color: #fd3d71;
+}
+.m-collageMenu image{
+  width: 30%;
+  margin-bottom: 10rpx;
+}
+
+.m-collageTitel{
+  text-align: center;
+  color: #333;
+  font-size: 36rpx;
+}
+.m-collageTitel image{
+  width: 40rpx;
+}
+.m-collageList{
+  flex-wrap: wrap;
+  padding: 24rpx;
+}
+.m-collageList collageItem{
+  margin-left: 20rpx;
+  margin-bottom: 24rpx;
+}
+.m-collageList collageItem:nth-child(2n-1){
+  margin-left: 0;
+}

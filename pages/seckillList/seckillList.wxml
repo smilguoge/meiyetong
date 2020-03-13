@@ -1,0 +1,75 @@
+<!--pages/seckillList/seckillList.wxml-->
+<import src="../../wxParse/wxParse.wxml"/><!-- 引入wxParse -->
+<!-- 首页轮播图 -->
+<view class='m-pageTop'>
+  <swiper indicator-dots="{{indicatorDots}}"
+  indicator-active-color="{{indicatorDotsActive}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{ad_list}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.plug_ad_pic=='' ? '../../images/seckill_banner.png' : (item.plug_ad_pic)}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 条幅切换 -->
+  <view class='m-nav'>
+    <block wx:for="{{nav_list}}" wx:key="index" wx:if="{{nav_list.length>0}}">
+      <view class='kuai'>
+        <view class='m-navList on' wx:if="{{index == btnIdx}}" bindtap='chooseCatch' data-index='{{index}}' data-start='{{item.StartTime}}' data-end='{{item.EndTime}}' data-type='{{item.type}}'>
+          <p>{{item.startday}}日{{item.start_time}}</p>
+          <span>{{item.msg}}</span>
+        </view>
+        <view class='m-navList' wx:else="{{index != btnIdx}}" bindtap='chooseCatch' data-index='{{index}}' data-start='{{item.StartTime}}' data-end='{{item.EndTime}}' data-type='{{item.type}}'>
+          <p>{{item.startday}}日{{item.start_time}}</p>
+          <span>{{item.msg}}</span>
+        </view>
+        <image src="../../images/seckill_btn.png" class='seckill_btn on' wx:if="{{index == btnIdx}}"/>
+        <image src="../../images/seckill_btn.png" class='seckill_btn' wx:else="{{index != btnIdx}}"/>
+      </view>
+    </block>
+    <block wx:if="{{nav_list.length==''}}"><view class='warn'>暂无活动</view></block>
+  </view>
+</view>
+<!-- 活动时间 -->
+<view class='m-time' wx:if="{{type == 0}}">
+    本场倒计时：
+    <rich-text>{{day}}</rich-text>
+    :
+    <rich-text>{{hour}}</rich-text>
+    :
+    <rich-text>{{minute}}</rich-text>
+    :
+    <rich-text>{{second}}</rich-text>
+</view>
+<view class='m-time' wx:elif="{{type == 1}}">
+    离开始还差：
+    <rich-text>{{day}}</rich-text>
+    :
+    <rich-text>{{hour}}</rich-text>
+    :
+    <rich-text>{{minute}}</rich-text>
+    :
+    <rich-text>{{second}}</rich-text>
+</view>
+<view class='m-time pray' wx:elif="{{type == -1}}">
+    活动已结束
+</view>
+<!-- 详情数据 -->
+<scroll-view class='m-scroll' scroll-y>
+  <seckillitem List="{{Listdata}}" bind:sonPage_go="fartherPage_go"></seckillitem>
+</scroll-view>
+<!-- 活动规则 -->
+<rich-text class='rule' bindtap='showCover'>
+  <image src='../../images/seckill_rule.png' mode='widthFix'/>
+  活动规则
+</rich-text>
+<view class='m-cover' wx:if="{{cover == true}}">
+  <view class='m-coverData'>
+    <view class='m-coverDataTop'><p>活动规则</p></view>
+    <view class='m-coverContent'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <image src='../../images/seckill_close.png' mode='widthFix' bindtap='hideCover'/>
+</view>
+

@@ -1,0 +1,25 @@
+/* pages/shop/template/hotItem/hotItem.wxss */
+.m-hotItem{
+  background: white;
+}
+.m-hotItem image{
+  width: 338rpx;
+  height: 338rpx;
+  margin-bottom: 12rpx;
+}
+.m-hotitem-title{
+  font-size: 22rpx;
+  color: #333;
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 12rpx;
+}
+.m-hotitem-text{
+  font-size: 20rpx;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  padding: 12rpx;
+}
+.orangeColor{
+  color: #fd3d71;
+}

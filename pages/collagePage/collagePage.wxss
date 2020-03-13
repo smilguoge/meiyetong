@@ -1,0 +1,113 @@
+/* pages/collagePage/collagePage.wxss */
+page{
+  background: #fd3d71;
+}
+.pinBgimg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+.m-mainbox{
+  margin: 30rpx;
+  background: white;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.pinGoods{
+  position: relative;
+}
+.pinGoods image{
+  width: 100%;
+}
+.pinGoods .pinGoods-title{
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 0 20rpx;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  line-height: 46rpx;
+  justify-content: space-between;
+}
+.pinGoods-txt{
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 拼团人数 */
+.pinPerson-txt{
+  font-size: 48rpx;
+  text-align: center;
+  margin-top: 36rpx;
+}
+.pinPersonnum{
+  flex-wrap: wrap;
+  padding: 36rpx 48rpx;
+}
+.pinPersonnum view{
+  position: relative;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 29.6rpx;
+  margin-bottom: 24rpx;
+}
+.pinPersonnum view text{
+  position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  display: block;
+  text-align: center;
+  background: #fab62a;
+  color: white;
+  border-radius: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 20rpx;
+}
+.pinPersonnum image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 100%;
+  border: 2rpx solid #fab62a;
+}
+.inviteBtn{
+  width: 570rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #e02e24;
+  color: white;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+}
+.tipTxt{
+  text-align: center;
+  color: #999;
+  font-size: 26rpx;
+}
+.m-notice{
+  text-align: center;
+  margin: 30rpx auto;
+}
+.m-notice image{
+  width: 60%;
+}
+/* 推荐 */
+.recommendItem{
+  padding: 20rpx;
+}
+.recommendItem item{
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.recommendItem item:nth-child(2n) {
+  margin-right: 0;
+}

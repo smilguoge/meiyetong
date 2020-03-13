@@ -1,0 +1,15 @@
+/* pages/consumeList/consumeList.wxss */
+.m-calendar{
+  width: 40rpx;
+}
+.m-sure{
+  border-radius: 40rpx;
+  color: white;
+  background: #4fd2c2;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+#end{
+  margin-left: 10%
+}

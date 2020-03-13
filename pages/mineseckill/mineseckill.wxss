@@ -1,0 +1,5 @@
+/* pages/mineseckill/mineseckill.wxss */
+scroll-view {
+  height:91vh;
+
+}

@@ -1,0 +1,14 @@
+/* components/canvasToimg/canvasToimg.wxss */
+
+.m-shadow{
+  background:rgba(0,0,0,0.3); position:fixed; top:0; bottom:0; left:0; right:0; z-index:1;
+}
+
+.m-canvas{
+  position: fixed;
+  z-index: 3;
+  width: 80%;
+  height: 68%;
+  left: 10%;
+  top: 10%;
+}

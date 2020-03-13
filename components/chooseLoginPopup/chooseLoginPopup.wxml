@@ -1,0 +1,17 @@
+<!--components/chooseLoginPopup/chooseLoginPopup.wxml-->
+<view class='shadow'></view>
+<view class='m-accreditType'>
+  <view class='tc'>选择登录方式</view>
+  <view class='flex tc'>
+    <button class='felxcell m-typeView' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <view><image src='../../images/accredit1@2x.png' mode='widthFix'></image></view>
+      授权登录
+    </button>
+    <!-- <button class='felxcell m-typeView' bindtap='toLogin'>
+      <view><image src='../../images/accredit2@2x.png' mode='widthFix'></image></view>
+      验证登录
+    </button> -->
+  </view>
+</view>
+
+<!-- <image src='../../images/close@2x.png' mode='widthFix' class='m-close' bindtap='close'></image> -->

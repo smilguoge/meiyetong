@@ -1,0 +1,25 @@
+<!--引用插件-->
+
+<!--components/moreCollage/moreCollage.wxml-->
+<view class='shadow'></view>
+<view class='closeX' bindtap='closeAllcollage'>X</view>
+<view class='isCollaging'>
+  <view class='m-title'>正在拼单</view>
+  {{showtxt()}}
+  <view class='collagePerson'>
+    <block wx:for="{{componentCollagelist}}" wx:key="index">
+      <view class='personItem'>
+        <image src='{{item.wximage}}' class='userImg'></image>
+        <view>
+          <view class='txtOverflow'>{{item.Name}}</view>
+          <view class='restTime txtOverflow'>
+            剩余{{item.time}}
+          </view>
+        </view>
+        <view class='restTime'>还差{{item.surplus_number}}人</view>
+        <core spelling_id="{{item.id}}"></core>
+        
+      </view>
+    </block>
+  </view>
+</view>

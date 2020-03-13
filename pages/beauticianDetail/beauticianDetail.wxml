@@ -1,0 +1,17 @@
+<!--pages/beauticianDetail/beauticianDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/><!-- 引入wxParse -->
+<view class='m-content'>
+  <view class='tc m-top'>
+    <image class='m-img' src='{{detail.headImg}}'></image>
+    <view class='mb24'>{{detail.Name}}</view>
+    <view class='grayColor'>
+      <image src='../../images/beautician-icon@2x.png' class='beautician-icon' mode='widthFix'></image>
+      {{detail.Skill}}
+    </view>
+  </view>
+
+  <view>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!-- {{detail.Remark}} -->
+  </view>
+</view>

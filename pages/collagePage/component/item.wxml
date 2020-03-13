@@ -1,0 +1,10 @@
+<!--pages/collagePage/component/item.wxml-->
+<view class='m-items' bindtap='toCollagedetail'>
+  <image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image>
+  <text class='item-title'>【补水套装】美白精华液，超补水超美白</text>
+  <view class='m-price'>
+    <text>￥0.01</text>
+    <text>￥0.01</text>
+  </view>
+  <button class='m-btn'>去开团</button>
+</view>

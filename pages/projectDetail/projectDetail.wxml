@@ -1,0 +1,82 @@
+<!-- <view class='m-canvasShodaw {{isCanvas?"db":""}}' bindlongpress='canvas2img'>
+  <view class='m-shadow' bindtap='closeCanvas'></view>
+  <canvas class='m-canvas' canvas-id="firstCanvas"></canvas>
+</view> -->
+
+<import src="../../wxParse/wxParse.wxml"/><!-- 引入wxParse -->
+
+<import src="../../template/canvas.wxml"/>  <!-- 引入canvas模板 -->
+
+<view wx:if="{{isCanvas}}">
+  <template is="canvasTem" data="{{...detail}}"/>
+</view>
+
+<image src='{{detail.Avatar}}' mode='widthFix' class='collage-img' wx:if="{{_type==1}}"></image><!-- 项目 -->
+<image src='{{detail.pic}}' mode='widthFix' class='collage-img' wx:if="{{_type==2}}"></image><!-- 产品 -->
+<image src='{{detail.pic}}' mode='widthFix' class='collage-img' wx:if="{{_type==3}}"></image><!-- 卡项 -->
+
+<view class='bgWhite mb24'>
+  <view class='m-title'>
+    {{detail.ProjectName || detail.GoodsName  || detail.CardKindName || "美业通商品"}}
+  </view>
+  <view class='flex m-price'>
+    <text>￥{{detail.Price || detail.SellMoney ||  0}}</text>
+    <!-- <view>
+      <rich-text name="p" bindtap='showCanvas'><image src='../../images/scancode.png' mode='widthFix' style='width:60rpx;'></image></rich-text>
+      已售{{detail.ProjectSales || detail.SaleNum || 0}}
+    </view> -->
+  </view>
+  <view class='m-price'>
+    门店：{{detail.ShopName || "美业通"}}
+  </view>
+</view>
+
+<!-- 暂时隐藏了...... -->
+<view class='bgWhite mb24' wx:if="{{false}}">
+  <view class='collageNum flex'>
+    <view class='grayColor'>时长</view>
+    <view class='ml24'>60min</view>
+  </view>
+  <view class='collageNum flex' bindtap='showSpec'>
+    <view class='grayColor'>选择</view>
+    <view class='ml24'>请选择 项目套餐</view>
+    <view class='rightArrow'></view>
+  </view>
+</view>
+
+<!-- 商品详情 -->
+<view class='collage-detal'>
+  <view class='detailTit mb24'>商品详情</view>
+  <view style='width:100%'>
+    <!-- {{detail.Detail}} -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+<view class='collageFixed'>
+  <view class='m-bugNum flex'>
+    <text bindtap='minusNum'>-</text>
+    <input type='number' value='{{num}}' bindblur='inputNum'></input>
+    <text bindtap='addNum'>+</text>
+  </view>
+  <view class='buyAlone' bindtap='addTocart'>
+    <rich-text name="p">加入购物车</rich-text>
+  </view>
+  <view class='buyTogether' bindtap='showSpec'>
+    <rich-text name="p">立即购买</rich-text>
+  </view>
+</view>
+
+<spec wx:if="{{isSpec}}" bind:closeSpec="closeSpec" projectCard="{{projectCard}}" _type="{{_type}}"></spec>
+
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 确定购买后显示支付方式 -->
+<payType wx:if="{{showPaytype}}" 
+bind:cancelPay="cancelPay" bind:successPay="successPay" bind:failPay="failPay"
+spellingDetial="{{detail}}"></payType>
+
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>

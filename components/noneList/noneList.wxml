@@ -1,0 +1,5 @@
+<!--components/noneList/noneList.wxml-->
+<view class='noneBox'>
+  <image src='../../images/bg.png' class='noneImg'></image>
+  <slot></slot>
+</view>

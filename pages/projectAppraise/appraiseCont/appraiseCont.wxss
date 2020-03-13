@@ -1,0 +1,66 @@
+/* pages/projectAppraise/appraiseCont/appraiseCont.wxss */
+@import '../../../app.wxss';
+.p16{
+  padding: 16rpx 24rpx;
+}
+.closeX{
+  position: absolute;
+  right: 10%;
+  top: -160rpx;
+  background: white;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 100%;
+  font-size: 38rpx;
+  z-index: 68;
+  color: #999999;
+}
+.isCollaging{
+  position: fixed;
+  bottom: 0%;
+  left: 0; right: 0;
+  z-index: 68;
+  background: white;
+  padding: 24rpx;
+  font-size: 26rpx;
+}
+
+.m-title{
+  text-align: center;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 28rpx;
+  padding-bottom: 24rpx;
+}
+
+.m-shopicon{
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+.m-pingjia{
+  align-items: flex-start;
+  line-height: 30rpx;
+}
+.m-remarks{
+  border: 2rpx solid #f2f2f2;
+  padding: 24rpx;
+  height: 100rpx;
+  width: 556rpx;
+}
+.m-submitBtn{
+  width: 383rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 auto;
+  /* margin-top: 40rpx; */
+  border-radius: 80rpx;
+  background: #4fd2c2;
+  color: white;  
+  text-align: center;
+}
+.m-complain{
+  margin: 24rpx auto;
+  text-align: center;
+  color: #999;
+}

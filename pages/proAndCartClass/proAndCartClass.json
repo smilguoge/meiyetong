@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "noneList" : "../../components/noneList/noneList",
+    "proCartListItem": "../../components/proCartListITem/proCartListItem"
+  }
+}

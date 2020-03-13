@@ -1,0 +1,34 @@
+<!--pages/proAndCartClass/proAndCartClass.wxml-->
+<view class='flex' style='align-items:flex-start'>
+  <view class='left'>
+    <block wx:for="{{kindlist}}" wx:key="index" wx:for-item="leftitems">
+      <view class='{{index==leftIdx?"active":""}}' bindtap='chooseMenu' data-index='{{index}}'>
+        {{leftitems.GoodsKindName || leftitems.CardName}}
+      </view>
+    </block>
+  </view>
+  <view class='right flexcell'>
+    <scroll-view scroll-y style='height:100%;' bindscrolltolower="bindscrolltolower">
+      <noneList wx:if="{{noList}}">
+        <view>暂无数据</view>
+      </noneList>
+      <view wx:else>
+        <view class='rightTitle'><text></text>{{kindlist[leftIdx].GoodsKindName || kindlist[leftIdx].CardName}}</view>
+        <block wx:for="{{listByKind}}" wx:key="index">
+          <proCartListItem listByKind="{{item}}" bindtap="toProjectdetail" data-goodsid="{{item.GoodsId || item.Id}}"></proCartListItem>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<template name="projectdata">
+  <view class="m-loadmore m-loadmore_line">
+        <span class="m-loadmore__tips">暂无更多数据</span>
+  </view>
+</template>
+
+<!--无数据组件-->
+<block wx:if="{{projectshow}}">
+  <template is="projectdata" />
+</block>

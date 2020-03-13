@@ -1,0 +1,18 @@
+<!--pages/projectClass/projectClass.wxml-->
+<view class='m-shopMenu flex'>
+  <block wx:for="{{kindlist}}" wx:key="index">
+  <view class='m-menuitem {{index==leftIdx?"active":""}}' data-index='{{index}}' bindtap='chooseMenu'>
+    <image src='{{item.cover}}' mode='widthFix'></image>
+    <rich-text name="p">{{item.ProjectKindName}}</rich-text>
+  </view>
+  </block>
+</view>
+
+<noneList wx:if="{{noList}}">
+    <view>暂无数据</view>
+  </noneList>
+<view class='flex m-hotProject' wx:else>
+  <block wx:for="{{listByKind}}" wx:key="index">
+    <hotItem hotitem="{{item}}" class="m-hotItem" isGoods="0"></hotItem>
+  </block>
+</view>

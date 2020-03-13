@@ -1,0 +1,30 @@
+<!--componets/dialogTem.wxml-->
+<view class="dialog-face" bindtap='closeDialog_close'></view>
+<view class="dialog-root">
+    <view id="dialog-wrapper" class="dialog-wrapper">
+        <view class="dialog-header">
+            <text>{{dialogTitle}}</text>
+        </view>
+        <view class="dialog-content">
+          <view class='content-item'>
+            <text>门店</text>：
+            <view>{{dialogCont.shopName}}</view>
+          </view>
+          <view class='content-item'>
+            <text>美容师</text>：
+            <view>{{dialogCont.technician}}</view>
+          </view>
+          <view class='content-item'>
+            <text>项目</text>：
+            <view>{{dialogCont.projectName}}</view>
+          </view>
+          <view class='content-item'>
+            <text>时间</text>：
+            <view>{{dialogCont.proTimedate}} <rich-text name="p">{{dialogCont.proTimetime}}</rich-text></view>
+          </view>
+        </view>
+        <view class="dialog-footer">
+            <button bindtap='closeDialog'>确认</button>
+        </view>
+    </view>
+</view>

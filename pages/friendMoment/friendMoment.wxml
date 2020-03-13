@@ -1,0 +1,19 @@
+<!--pages/friendMoment/friendMoment.wxml-->
+<tabTem momentTab="{{momentTab}}" bind:tabEvent="tabEvent"></tabTem>
+
+<view class='flex m-imgList' wx:if="{{type==2}}">
+  <block wx:for="{{videolist}}" wx:key="index">
+    <view>
+      <image src='{{item.path}}' mode='widthFix'></image>
+      <text>{{item.videoname}}</text>
+    </view>
+  </block>
+</view>
+<view class='m-video' wx:else>
+  <block wx:for="{{videolist}}" wx:key="index">
+  <video src='{{item.path}}'
+  poster="{{item.coverimg}}"
+  controls show-fullscreen-btn="{{true}}" show-play-btn="{{true}}" show-progress="{{true}}"></video>
+  <view>{{item.videoname}}</view>
+  </block>
+</view>

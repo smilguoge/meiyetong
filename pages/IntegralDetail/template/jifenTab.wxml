@@ -1,0 +1,9 @@
+<!--pages/jifenMall/template/jifenTab.wxml-->
+<view class='m-tabbox'>
+  <view class='flex tc m-tab'>
+    <view class='flexcell p24' bindtap='chooseAll' wx:for="{{tabarr}}" data-id="{{index}}" wx:key="index">
+      <view class="{{item.select?title:''}}">{{item.title}}</view>
+      <view class='bottom-line' wx:if="{{item.select}}"></view>
+    </view>
+  </view>
+</view>

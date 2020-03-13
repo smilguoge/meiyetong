@@ -1,0 +1,58 @@
+/* pages/modifyMeminfo/modifyMeminfo.wxss */
+@import "../mine/mine.wxss";
+.over{
+  background: none;
+}
+.m-info{
+  position: relative;
+}
+.m-mineheader{
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: white;
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; z-index: 3;
+  width: auto;
+  margin: 80rpx 24rpx 0;
+}
+.m-username{
+  color: white;
+}
+.m-flowerAjifen{
+  text-align: left;
+}
+
+.m-formlist{
+  font-size: 24rpx;
+  padding: 0 80rpx;
+  margin-bottom: 48rpx;
+}
+.m-formlist view{
+  background: white;
+  border-radius: 10rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-bottom: 18rpx;
+  display: flex;
+  align-content: center;
+  padding: 0 24rpx;
+}
+.m-formlist view text{
+  width: 20%;
+}
+.m-formlist view input,.m-formlist view picker{
+  flex: 1;
+}
+
+.m-modifyBtn{
+  background: #fd3d71;
+  color: white;
+  width: 80%;
+  line-height: 90rpx;
+  font-size: 30rpx;
+}
+.m-formlist view picker .picker{
+  padding: 0
+}

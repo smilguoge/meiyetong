@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/shop/shop",
+    "pages/projectPayment/projectPayment",
+    "pages/jifenDetail/jifenDetail",
+    "pages/jifenMall/jifenMall",
+    "pages/jifenCenter/jifenCenter",
+    "pages/mine/mine",
+    "pages/modifyMeminfo/modifyMeminfo",
+    "pages/awardDetail/awardDetail",
+    "pages/withdraw/withdraw",
+    "pages/consumeList/consumeList",
+    "pages/balanceDetail/balanceDetail",
+    "pages/myOrders/myOrders",
+    "pages/projectAppraise/projectAppraise",
+    "pages/orderDetail/orderDetail",
+    "pages/friendMoment/friendMoment",
+    "pages/proAndCartClass/proAndCartClass",
+    "pages/cart/cart",
+    "pages/beauticianDetail/beauticianDetail",
+    "pages/beauticianList/beauticianList",
+    "pages/projectDetail/projectDetail",
+    "pages/projectClass/projectClass",
+    "pages/collage/collage",
+    "pages/appointment/appointment",
+    "pages/mapShopaddr/mapShopaddr",
+    "pages/myCollage/myCollage",
+    "pages/myAppointment/myAppointment",
+    "pages/addAddress/addAddress",
+    "pages/address/address",
+    "pages/payment/payment",
+    "pages/collageDetail/collageDetail",
+    "pages/collagePage/collagePage",
+    "pages/collagePageShare/collagePageShare",
+    "pages/appointTechnician/appointTechnician",
+    "pages/appointmentDay/appointmentDay",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/IntegralDetail/IntegralDetail",
+    "pages/seckillList/seckillList",
+    "pages/seckillProject/seckillProject",
+    "pages/seckillPayment/seckillPayment",
+    "pages/mineseckill/mineseckill",
+    "pages/seckillorderDetail/seckillorderDetail",
+    "template/core"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f2f2f2",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#fd3d71",
+    "color": "#999",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "images/appoint.png",
+        "selectedIconPath": "images/appoint_on.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "首页",
+        "iconPath": "images/shop.png",
+        "selectedIconPath": "images/shop_on.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_on.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置将用于小程序展示相应商品数据展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

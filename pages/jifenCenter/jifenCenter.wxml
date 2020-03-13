@@ -1,0 +1,24 @@
+<!--pages/jifenCenter/jifenCenter.wxml-->
+<view class='m-jifenTop'>
+  <view class='m-jifenmall'>
+    <navigator url="../jifenMall/jifenMall">
+    <image src='../../images/shop-icon@2x.png' mode='widthFix'></image>
+    积分商城
+    </navigator>
+  </view>
+  <image src='../../images/jifen-icon@2x.png' mode='widthFix' class='m-jifenIcon'></image>
+  <view>总积分：999</view>
+</view>
+
+<view class='bgWhite'>
+  <view class='flex m-momentTop'>
+    <block wx:for="{{momentTab}}" wx:key="index">
+      <view class='flexcell {{tabIdx==index?"active":""}}' data-index='{{index}}' bindtap='tabEvent'>{{item}}</view>
+    </block>
+  </view>
+  <block wx:for="{{10}}" wx:key="index">
+  <view class='bgWhite p24'>
+    <jifenItem></jifenItem>
+  </view>
+  </block>
+</view>

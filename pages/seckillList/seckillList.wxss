@@ -1,0 +1,171 @@
+/* pages/seckillList/seckillList.wxss */
+.m-nav::-webkit-scrollbar {
+    display: none;
+}
+swiper{
+  width: 100%;
+  height: 377rpx;
+  display: inline-block;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+
+.m-nav {
+  width:100%;
+  height:150rpx;
+  margin-top:-1%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.m-nav .warn {
+  width:100%;
+  line-height:104rpx;
+  text-align:center;
+  color:red;
+  font-size:32rpx;
+  font-weight:bold;
+}
+.kuai {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  height: 100rpx;
+}
+.m-navList {
+  color: white;
+  font-size: 29rpx;
+  background:#333333;
+  height: 100%;
+  padding-top:2%;
+}
+.seckill_btn {
+  width:25rpx;
+  height:22rpx;
+  position:absolute;
+  bottom:-20rpx;
+  left:83rpx;
+  z-index:99;
+  display:none;
+
+
+}
+.seckill_btn.on {
+  display: block;
+}
+.m-navList.on {
+  background: -webkit-linear-gradient(#F55E3E, #F78A35) !important;
+}
+
+.m-navList p {
+  width: 100%;
+  text-align:center;
+  display:block;
+  margin-top:5%;
+
+}
+.m-navList span{
+  width: 100%;
+  text-align:center;
+  display:block;
+  margin-top:1%;
+}
+.m-time {
+  width:100%;
+  background:white;
+  color:black;
+  font-size:29rpx;
+  padding:3% 0;
+  text-align:center;
+  margin-top:-6%;
+
+}
+.m-time.pray {
+  color: #999999!important;
+}
+.m-time rich-text {
+  display:inline-block;
+  color:white;
+  padding:1rpx 6rpx;
+  border-radius:6px;
+  background: -webkit-linear-gradient(#F55E3E, #F78A35) !important;
+}
+.m-scroll {
+  width: 100%;
+  height: 52vh;
+  margin-top: 20rpx;
+}
+.m-scroll::-webkit-scrollbar {
+    display: none;
+}
+.rule {
+  position:absolute;
+  right:21rpx;
+  top:20rpx;
+  z-index:105;
+  color:white;
+  font-size:27rpx;
+
+}
+.rule image {
+  width: 30rpx;
+}
+.m-cover {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 999;
+  background: rgba(0,0,0,0.5);
+}
+.m-cover .m-coverData {
+  position:absolute;
+  left:50%;
+  top:43%;
+  transform:translate(-50%,-50%);
+  width:516rpx;
+  background:white;
+  overflow: hidden;
+  border-radius:11rpx;
+}
+.m-cover .m-coverData .m-coverDataTop {
+  width:100%;
+  line-height:120rpx;
+  height:120rpx;
+  color:white;
+  font-size:29rpx;
+  background:#FB6338;
+  text-align:center;
+
+}
+.m-cover .m-coverData .m-coverDataTop p {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin: 0 12rpx;
+}
+.m-cover .m-coverData .m-coverDataTop p::before {
+  content: '————';
+  margin-right: 12rpx;
+}
+.m-cover .m-coverData .m-coverDataTop p::after {
+  content: '————';
+  margin-left: 12rpx;
+}
+.m-cover .m-coverData .m-coverContent {
+  width:90%;
+  padding:27rpx;
+  height:519rpx;
+  overflow-y:scroll;
+}
+.m-cover image {
+  width:64rpx;
+  margin-top:1%;
+  right:27rpx;
+  top:32rpx;
+  position:absolute;
+
+}

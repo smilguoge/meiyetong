@@ -1,0 +1,20 @@
+/* pages/jifenCenter/template/jifenItem.wxss */
+@import '../../../app.wxss';
+
+.m-dot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 100%;
+  margin-right: 24rpx;
+  margin-left: 18px;
+  background: #b6b6b6;
+}
+.m-jifen{
+  font-size: 36rpx;
+  color: #111111;
+  margin-right: 24px;
+}
+.grayColor{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}

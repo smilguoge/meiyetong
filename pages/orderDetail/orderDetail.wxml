@@ -1,0 +1,72 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+
+<view class='m-addrcont' wx:if="{{orderDetail.shipping_status=='0'}}"><!-- 门店自取 -->
+  <view>
+    配送方式：门店自取
+  </view>
+  <view>
+    自取门店：{{orderDetail.shop_name}}
+  </view>
+</view>
+<view class='flex m-addrcont' wx:else>
+  <image src='../../images/addr@2x.png' mode='widthFix' class='m-addricon'></image>
+  <view class='flexcell'>
+    <view class='justify-flex'>
+      <view class='mb24'>收货人：{{orderDetail.address_info.Name}}</view>
+      <view class='grayColor'>{{orderDetail.address_info.Phone}}</view>
+    </view>
+    <view>收货地址：{{orderDetail.address_info.Province}}
+    {{orderDetail.address_info.City}}
+    {{orderDetail.address_info.Area}}
+    {{orderDetail.address_info.Address}}</view>
+  </view>
+</view>
+
+<view class='mb24'>
+  <block wx:for="{{orderDetail.goodsInfo}}" wx:key="index">
+    <view class='flex m-ordercont' bindtap='toProjectDetail'>
+      <image class='m-orderImg' src='{{BASE_url+item.pic}}'></image>
+      <view class='flexcell'>
+        {{item.name}}
+      </view>
+      <view class='tr ml24'>
+        <rich-text name="p" class='grayColor'>x{{item.quantity}}</rich-text>
+        ￥{{item.price}}
+      </view>
+    </view>
+  </block>
+  <view class='m-orderAccount'>订单总价： <text class='orangeColor'>￥{{orderDetail.total_amount}}</text></view>
+</view>
+
+<view class='grayColor bgWhite p24'>
+  <view>物流公司：{{orderDetail.ship_company || "暂无"}}</view>
+  <view>物流单号：{{orderDetail.ship_number || "暂无"}}</view>
+  <view>订单编号：{{orderDetail.order_sn}}</view>
+  <view>付款时间：{{orderDetail.add_date}}</view>
+</view>
+
+<!-- 0：未支付，1：已支付 （待发货） 2：待收货，3：确认收货 4：关闭订单 5 :未订单失效 6删除订单 7 取消订单 -->
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==0}}">
+  <button data-id="{{orderDetail.id}}" bindtap='canal_order'>取消订单</button>
+  <button class='m-btnColor' bindtap='pay_order'>付款</button>
+</view>
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==1}}">
+  <button>待发货</button>
+  <!-- <button class='m-btnColor'>待发货</button> -->
+</view>
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==2}}">
+  <!-- <button>取消订单</button> -->
+  <button class='m-btnColor' data-id="{{orderDetail.id}}" bindtap='sure_order'>确认收货</button>
+</view>
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==3}}">
+  <!-- <button>取消订单</button> -->
+  <button class='m-btnColor'>交易成功</button>
+</view>
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==4}}">
+  <button>交易关闭</button>
+  <!-- <button class='m-btnColor'>付款</button> -->
+</view>
+<view class='m-orderBtn' wx:if="{{orderDetail.pay_status==5}}">
+  <button>未支付订单失效</button>
+  <!-- <button class='m-btnColor'>付款</button> -->
+</view>

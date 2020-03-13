@@ -1,0 +1,7 @@
+<!--components/tabTem/tabTem.wxml-->
+
+<view class='flex m-momentTop'>
+  <block wx:for="{{momentTab}}" wx:key="index">
+    <view class='flexcell {{tabIdx==index?"active":""}}' data-index='{{index}}' bindtap='tabEvent'>{{item}}</view>
+  </block>
+</view>

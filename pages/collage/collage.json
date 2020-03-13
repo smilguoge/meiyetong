@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "collageItem": "../../components/collageItem/collageItem",
+	"accredit": "../../components/accredit/accredit"
+  }
+}

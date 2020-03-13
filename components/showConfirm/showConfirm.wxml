@@ -1,0 +1,10 @@
+<!--components/showConfirm/showConfirm.wxml-->
+<!-- 弹窗：confirm -->
+<view class='shadow'></view>
+<view class='confirmBox'>
+  <slot></slot>
+  <view class='confirmBtn'>
+    <text class='cancelEvent' bindtap='cancelEvent'>取消</text>
+    <text class='sureEvent' bindtap='sureEvent'>确定</text>
+  </view>
+</view>

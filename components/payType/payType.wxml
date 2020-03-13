@@ -1,0 +1,8 @@
+<!--components/payType/payType.wxml-->
+<!-- 支付方式 -->
+<view class='shadow'></view>
+<view class='payTypeBox'>
+  <text>选择支付方式</text>
+  <view bindtap='wxpayEvent'>微信支付</view>
+  <view bindtap='cancelPay'>取消</view>
+</view>

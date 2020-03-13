@@ -1,0 +1,46 @@
+<!--pages/withdraw/withdraw.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='m-content'>
+  <view class='m-main'>
+    <view class='m-top'>
+      <view class='top-title'>
+        <view class='title-left'>
+          <image src="../../images/flower-icon2@2x.png"></image>
+          花瓣个数
+        </view>
+        <view class='title-right' bindtap='showRule'>提现规则</view>
+      </view>
+      <view class='top-num'>{{Now_Petal}}</view>
+    </view>
+    <view class='m-center'>
+      <view class='center-flower'>当前花瓣个数:{{Now_Petal}}</view>
+      <view class='center-cash'>待提现金额:{{Wait_Withdraw}}</view>
+    </view>
+    <view class='m-bottom'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class='b-cell'>
+          <view class='cell-left'>选择银行</view>
+          <view class='cell-right'>{{array[index]}}</view>
+        </view>
+      </picker>
+      <view class='b-input'>
+        <input id='OpenBand' bindinput='bindKeyInput' placeholder='开户行'></input>
+        <input id='Account' type='number' bindinput='bindKeyInput' placeholder='银行账号'></input>
+        <input id='user_name' bindinput='bindKeyInput' placeholder='开户姓名'></input>
+        <input id='cash' type='number' bindinput='bindKeyInput' placeholder='提现金额' value='{{Withdraw_data.money}}'></input>
+        <button bindtap='withdraw' disabled='{{disabled}}'>申请提现</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='withdraw_rule' wx:if="{{show_Rule}}" bindtap='showRule'>
+  <view class='rule-top'>
+    <image src='../../images/tixian-rules@2x.png'></image>
+    提现规则
+  </view>
+  <view class='rule-content'>
+    <view class='content-text'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+</view>

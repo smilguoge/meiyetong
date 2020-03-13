@@ -1,0 +1,36 @@
+<!--pages/myOrders/orderItem/orderItem.wxml-->
+<view class='orderItem'>
+  <view class='justify-flex'>
+    <text class='orangeColor' wx:if="{{order.pay_status == 0}}">等待买家付款</text>
+    <text class='orangeColor' wx:if="{{order.pay_status == 1}}">已付款</text>
+    <text class='orangeColor' wx:if="{{order.pay_status == 2}}">已发货</text>
+    <text class='orangeColor' wx:if="{{order.pay_status == 3}}">交易成功</text>
+    <text class='orangeColor' wx:if="{{order.pay_status == 4}}">交易关闭</text>
+    <text class='orangeColor' wx:if="{{order.pay_status == 5}}">未支付订单失效</text>
+    <view class='grayColor'>
+      {{order.add_date}}
+    </view>
+  </view>
+  <view class='grayColor'>订单号：{{order.order_sn}}</view>
+</view>
+
+<view class='flex m-ordercont'>
+  <image class='m-orderImg' src='{{order.goodsData.pic}}'></image>
+  <view class='flexcell'>
+    {{order.goodsData.goodsname}}
+  </view>
+  <view class='tr ml24'>
+    <rich-text name="p" class='grayColor'>x{{order.goodsData.quantity}}</rich-text>
+    ￥{{order.goodsData.price}}
+  </view>
+</view>
+
+<view class='m-orderAccount'>合计： <text class='orangeColor'>￥{{order.total_amount}}</text></view>
+<view class='m-orderBtn' wx:if="{{order.pay_status == 0}}">
+  <button data-id="{{order.id}}" data-index="{{order.useindex}}" catchtap='canal_order'>取消订单</button>
+  <button class='m-btnColor' data-id='{{order.id}}' catchtap='pay_order' data-pay_data="{{order.pay_data}}">付款</button>
+</view>
+
+<view class='m-orderBtn' wx:if="{{order.pay_status == 2}}">
+  <button data-id="{{order.id}}" catchtap='sure_order'>确认收货</button>
+</view>

@@ -1,0 +1,25 @@
+<!--pages/consumeList/consumeList.wxml-->
+<view class='flex p24 bgWhite mb24'>
+  <image class='m-calendar' src='../../images/calendar-icon1@2x.png' mode='widthFix'></image>
+  <view class='flexcell flex grayColor ml24'>
+    <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" id='star'>
+      <view class="picker">
+        开始: {{startdate}}
+      </view>
+    </picker>
+    <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" id='end'>
+      <view class="picker">
+        结束: {{enddate}}
+      </view>
+    </picker>
+  </view>
+</view>
+
+<block wx:for="{{list}}" wx:key="index">
+  <consumeItem class="mb24" consumeData="{{item}}"></consumeItem>
+</block>
+<block wx:if="{{list.length ==0}}">
+  <noneList >
+    <view>暂无消费详情</view>
+  </noneList>
+</block>

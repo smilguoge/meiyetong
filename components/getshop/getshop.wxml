@@ -1,0 +1,14 @@
+<!--components/getshop.wxml-->
+<view class='m-cover'>
+  <view class='m-coverCheck'>
+    <text>为了提供更好服务，请选择想要注册的门店</text>
+    <view class='m-coverint'>
+      <view class="section__title">请选择</view>
+      <picker bindchange="bindPickerChange" value="{{shoplist[index].Shop}}" range="{{shoplist}}" range-key="Shop">
+        <view wx:if="{{index == null}}" class="picker">点击选择</view>
+        <view wx:if="{{index != null}}" class="picker">{{shoplist[index].Shop}}</view>
+      </picker>
+    </view>
+    <view class='m-cover-affirm' bindtap='chooseshop'>确认</view>
+  </view>
+</view>

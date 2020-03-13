@@ -1,0 +1,38 @@
+<!--pages/appointment/appointment.wxml-->
+<!--引用插件-->
+<import src="../../components/noAuthorize/noAuthorize.wxml"/>
+<block wx:if="{{noaccredit}}">
+  <template is="Accredit" />
+</block>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 未注册 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>
+
+
+<view class='appointView' wx:for="{{items}}" wx:key="index" wx:for-item="item">
+  <view class='tc'>
+    <image class='appoiImg' src='{{item.ShopImg}}'></image>
+  </view>
+  <view class='boxWidth appointBtn'>
+   <button bindtap='toAppointBtn' data-id='{{item.id}}' data-name='{{item.Shop}}'>点击预约</button>
+  </view>
+
+  <view class='txtBordertop'>
+    <view class='flex boxWidth'>
+        <text class='flexcell'>{{item.Shop}}</text>
+        <view class='flexcell tr' bindtap='makePhoneCall' data-phone='{{item.Tel}}'>
+          {{item.Tel}}
+          <image src='../../images/phone@2x.png' mode='widthFix' class='callIcon'></image>
+        </view>
+    </view>
+    <view class='boxWidth appointAddr' data-index='{{index}}' data-location='{{item.location}}'>
+      <image mode='widthFix' src='../../images/addr@2x.png' mode='widthFix'></image>
+      <text>{{item.Address}}</text>
+    </view>
+    <!-- <view class='boxWidth appointAddr'><rich-text>距离:{{item.distance}}km</rich-text></view> -->
+  </view>
+  
+</view>

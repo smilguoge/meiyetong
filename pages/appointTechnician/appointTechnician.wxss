@@ -1,0 +1,96 @@
+/* pages/appointTechnician/appointTechnician.wxss */
+.left{
+  width: 178rpx;
+  height: 93vh;
+  overflow-y: scroll;
+  background: #f7f7f7;
+}
+.left view{
+  border-left: 4rpx solid #f2f2f2;
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #666666;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.left view.active{
+  color: rgb(51, 51, 51);
+  background: white;
+  border-left-color: #fd3d71;
+}
+
+.projectBlock{
+  height:94vh;
+  overflow-y:scroll;
+  padding:0 24rpx;
+  background:white;
+  margin-top:-2%;
+  display: none;
+}
+.projectBlock.on{
+  display: block !important;
+}
+.rightTitle{
+  border-left: 4rpx solid #fd3d71;
+  color: #666666;
+  padding-left: 18rpx;
+}
+.m-proImg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 20rpx;
+}
+.m-proListitem{
+  padding: 20rpx 0;
+  margin-left: 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.m-proItem{
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 140rpx;
+  position: relative;
+  padding: 0 20rpx;
+}
+.m-proItem-img{
+  width: 30rpx;
+}
+.chooseIcon{
+  width: 40rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 2;
+}
+.m-proItem .flex{
+  color: #666666;
+  font-size: 24rpx;
+}
+.count{
+  position:absolute;
+  top:7rpx;
+  right:8rpx;
+  width:29rpx;
+  height:29rpx;
+  border-radius:50%;
+  background-color:#FD3E71;
+  color:#fff;
+  text-align:center;
+  font-style:normal;
+  font-size:9pt;
+  line-height:29rpx;
+  float:right;
+  display: none;
+}
+.count.on{
+  display: block !important;
+}

@@ -1,0 +1,17 @@
+/* pages/addAddress/addAddress.wxss */
+@import "../address/address.wxss";
+.addrForm{
+  background: white;
+}
+.addrItem{
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 30rpx 24rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.addrItem text{
+  width: 200rpx;
+}
+.addrDef{
+  justify-content: space-between;
+}

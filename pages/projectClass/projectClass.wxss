@@ -1,0 +1,36 @@
+/* pages/projectClass/projectClass.wxss */
+.m-shopMenu{
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+  background:white;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding-top: 20rpx;
+}
+.m-menuitem{
+  width: 20%;
+  margin-bottom: 24rpx;
+}
+.m-menuitem.active{
+  color: #73c1bd;
+}
+rich-text{
+  font-size: 24rpx;
+}
+.m-shopMenu image{
+  width:44%;
+  margin-bottom:15rpx;
+}
+.m-hotProject{
+  padding: 24rpx;
+  flex-wrap: wrap;
+}
+.m-hotItem{
+  width: 338rpx;
+  margin-right: 24rpx;
+  margin-bottom: 24rpx;
+}
+.m-hotItem:nth-child(2n){
+  margin-right: 0;
+}

@@ -1,0 +1,25 @@
+/* pages/beauticianDetail/beauticianDetail.wxss */
+.m-content{
+  background: white;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  font-size: 24rpx;
+  color: #333;
+  margin: 40rpx 24rpx;
+  margin-top: 126rpx;
+}
+.m-top{
+  margin-top: -126rpx;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+.m-img{
+  width: 246rpx;
+  height: 246rpx;
+  border-radius: 100%;
+  margin-bottom: 40rpx;
+}
+
+.beautician-icon{
+  width: 30rpx;
+}

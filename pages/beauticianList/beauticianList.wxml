@@ -1,0 +1,13 @@
+<!--pages/beauticianList/beauticianList.wxml-->
+<view class='m-beautician'>
+    <block wx:for="{{doctorList}}" wx:key="index">
+    <view class='beautician-view' bindtap='toBeauticianDetail' data-id='{{item.Id}}'>
+      <image class='beautician-img' src='{{item.HeadImg?item.HeadImg : "../../images/bg.png"}}'></image>
+      <view class='beautician-name'>{{item.Name}}</view>
+      <view class='textOver'>
+        <image src='../../images/beautician-icon@2x.png' class='beautician-icon' mode='widthFix'></image>
+        {{item.Skill}}
+      </view>
+    </view>
+    </block>
+  </view>

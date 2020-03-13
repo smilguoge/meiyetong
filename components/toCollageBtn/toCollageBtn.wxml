@@ -1,0 +1,3 @@
+<!--components/toCollageBtn/toCollageBtn.wxml-->
+<accreditPhone wx:if="{{noaccredit}}" bind:loginPhone="login"></accreditPhone>
+<view class='tocollage' bindtap='toCollagePage'>去拼团</view>

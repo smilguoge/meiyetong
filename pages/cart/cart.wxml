@@ -1,0 +1,56 @@
+<!--pages/cart/cart.wxml-->
+<view class='flex m-cart-top'>
+  <view class='bold'>
+    购物车
+    <rich-text>共{{total}}件宝贝</rich-text>
+  </view>
+  <view wx:if="{{isEdit}}" bindtap='editEvent'>编辑</view>
+  <view wx:else class='flex'>
+    <view bindtap='deleteCart'>删除</view>
+    <view class='ml24' bindtap='editHandle'>完成</view>
+  </view>
+</view>
+
+<view class='m-cartList'>
+
+  <block wx:for="{{cartlist}}" wx:key="index">
+
+  <view class='m-cart-item flex'>
+    <view bindtap='chooseIcon' data-index='{{index}}'>
+      <image wx:if="{{item.isChoose}}" class='m-chooseIcon' src='../../images/cart-choosed@2x.png' mode='widthFix'></image>
+      <image wx:else class='m-chooseIcon' src='../../images/chooseGray_2@2x.png' mode='widthFix'></image>
+    </view>
+    <image class='m-cartImg' src='{{BASE_url+item.pic}}'></image>
+    <view class='m-cartCont'>
+      <text>{{item.goods}}/{{item.FUnit || '件'}}</text>
+      <text class='orangeColor'>￥{{item.price}}</text>
+    </view>
+    <view class='flex m-cartIpt'>
+      <text bindtap='minusNum' data-index='{{index}}'>-</text>
+      <input type='number' value='{{item.quantity}}' bindblur='iptNum' data-index='{{index}}'></input>
+      <text bindtap='addNum' class='m-addipt' data-index='{{index}}'>+</text>
+    </view>
+  </view>
+
+  </block>
+</view>
+
+<view class='m-fixedbottom flex'>
+  <view bindtap='chooseIconAll'>
+    <image wx:if="{{isChooseAll}}" class='m-chooseIcon' src='../../images/cart-choosed@2x.png' mode='widthFix'></image>
+    <image wx:else class='m-chooseIcon' src='../../images/chooseGray_2@2x.png' mode='widthFix'></image>
+    全选
+  </view>
+  <view>
+    合计：<text class='orangeColor'>￥{{account}}</text>
+    <view class='ml24 m-jiesuan' bindtap='jiesuan'>结算（{{acount_num}}）</view>
+  </view>
+</view>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 获取手机号授权 -->
+<!-- <accreditPhone wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></accreditPhone> -->
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>

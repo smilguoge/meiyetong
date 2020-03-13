@@ -1,0 +1,37 @@
+<!--pages/address/address.wxml-->
+<!-- 地址管理 -->
+<noneList wx:if="{{addresslist.length ==0}}">
+  <view>您还未设置默认地址，请前往增加</view>
+</noneList>
+<view class='addrList' wx:else>
+  <text class='tips'>我的地址</text>
+  <block wx:for="{{addresslist}}" wx:key="index">
+    <view data-index='{{index}}' class='addressItem flex {{isInfinity&&(delIndex==index)?"infinity":""}}' 
+    bindtouchstart='addrTouchstart'
+    bindtouchend='addrTouchend'
+    bindtap='backtoPayment'>
+      <view class='addrNamecont'>
+        <view class='flex mb24'>
+          <view>{{item.Name}}</view>
+          <view class='ml24'>{{item.Phone}}</view>
+          <text class='defaultAddr' wx:if="{{item.State==0}}">默认</text>
+        </view>
+        <view class='addrCont'>
+          {{item.Province}} {{item.City}} {{item.Area}} {{item.Address}}
+        </view>
+      </view>
+      <view data-item='{{item}}' catchtap='editAddress'><image src='../../images/edit@2x.png' mode='widthFix' class='m-editIcon'></image></view>
+      <view class='delAddr' catchtap='deleteEvent'>删除</view>
+    </view>
+    
+  </block>
+  
+</view>
+
+<view class='addrFixedBottom' bindtap='addAddress'>
+  <button>+添加地址</button>
+</view>
+
+<showConfirm wx:if="{{isDelete}}" bind:cancelEvent="cancelEvent" bind:sureEvent="sureEvent">
+  <view class='tc' style='padding:80rpx 0;'>确认删除该地址吗？</view>
+</showConfirm>

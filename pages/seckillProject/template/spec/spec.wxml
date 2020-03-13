@@ -1,0 +1,40 @@
+<!--pages/projectDetail/template/spec/spec.wxml-->
+<view class='shadow' bindtap='closeSpec'></view>
+<view class='m-spec'>
+  <view class='m-close' bindtap='closeSpec'>X</view>
+  <view class='m-specBox mb24'>
+    <image wx:if="{{chooseProject.pic || projectCard[0].pic}}" src='{{baseUrl + (chooseProject.pic || projectCard[0].pic)}}'></image>
+    <image wx:else src='../../images/defaultImg@2x.png'></image>
+    <view class='m-specCont'>
+      <view>{{chooseProject.cardtye || projectCard[0].cardtye}}</view>
+      <!-- <text class='orangeColor'>￥{{chooseProject.money || projectCard[0].money}}</text> -->
+      <text class='orangeColor' wx:if="{{chooseProject.money==undefind || chooseProject.money=='undefind'}}">￥{{projectCard[0].money}}</text>
+      <text class='orangeColor' wx:else>￥{{chooseProject.money}}</text>
+      <view>已选：{{chooseProject.name || projectCard[0].name}}</view>
+    </view>
+  </view>
+  <view>
+    <rich-text name="p">套餐</rich-text>
+    <view class='flex m-specOption'>
+      <block wx:for="{{projectCard}}" wx:key="index">
+        <view class='{{specIdx==index?"active":""}}' bindtap='chooseSpecCont' data-index='{{index}}'>{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+  <view>
+    <view class='mb24'>套餐项目包含</view>
+    <view class='m-specitem'>
+      <block wx:for="{{chooseProject.list || projectCard[0].list}}" wx:key="index">
+        <view class='justify-flex grayColor mb24'>
+          {{item.ProjectName}}
+          <text class='orangeColor'>{{item.ROW_NUMBER}}次</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='flex m-buyBox'>
+    <view class='m-cart' bindtap='toCart'>加入购物车</view>
+    <view class='m-buy' bindtap='toPayment'>立即购买</view>
+  </view>
+</view>

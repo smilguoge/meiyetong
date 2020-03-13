@@ -1,0 +1,20 @@
+<!--pages/IntegralDetail/IntegralDetail.wxml-->
+<view class='m-mallTop'>
+  <image src='../../images/jifen-bg@2x.png' mode='widthFix'></image>
+  <view>
+    <rich-text name="h2">{{Integral}}</rich-text>
+    可用积分
+  </view>
+</view>
+<jifenTab bind:getIntegral='getTab'></jifenTab>
+
+<view class='bgWhite p24 m-jifenlist'>
+  <block wx:for="{{list}}" wx:key="index">
+    <jifenItem project="{{item}}" ></jifenItem>
+  </block>
+</view>
+<block wx:if="{{list.length ==0}}">
+  <noneList>
+    <view>暂无数据</view>
+  </noneList>
+</block>

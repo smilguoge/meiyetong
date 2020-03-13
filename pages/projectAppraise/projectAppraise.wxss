@@ -1,0 +1,9 @@
+/* pages/projectAppraise/projectAppraise.wxss */
+@import '../myOrders/orderItem/orderItem.wxss';
+.m-shopicon{
+  width: 40rpx;
+  margin-right: 10rpx;
+}
+.time{
+  float: right;
+}

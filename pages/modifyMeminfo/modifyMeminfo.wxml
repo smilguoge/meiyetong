@@ -1,0 +1,67 @@
+<!--pages/modifyMeminfo/modifyMeminfo.wxml-->
+<view class='over m-info mb24'>
+  <view class='m-header' bindlongtap='chooseImg'></view>
+  <view class='m-mineheader flex'>
+    <image src='{{customer_detail.headimgurl}}' class='m-mineheadimg'></image>
+    <view class='flexcell ml24'>
+      <view class='m-username'>{{customer_detail.nickname}}</view>
+      <view class='m-flowerAjifen'>
+        <view><image src='../../images/flower@2x.png' mode='widthFix'></image> 花瓣 {{customer_detail.Reward}}</view>
+        <view class='ml24'><image src='../../images/jifen@2x.png' mode='widthFix'></image> 积分 {{customer_detail.Integral}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='m-formlist'>
+  <view>
+    <text class='orangeColor'>姓名</text>
+    <input id="name" type='text' value='{{customer_list.Name}}' placeholder='用户名' bindinput="bindInput"></input>
+  </view>
+  <!-- <view>
+    <text class='orangeColor'>电话</text>
+    <input id="tel" type='text' value='{{customer_list.Mobile}}' placeholder='电话号码' bindinput="bindInput"></input>
+  </view> -->
+  <view>
+    <text class='orangeColor'>生日</text>
+    <picker id="BirthDate" mode="date" bindchange="bindChange" value="{{customer_list.BirthDate}}">
+      <view class="picker">
+        {{customer_list.BirthDate}}
+      </view>
+    </picker>
+  </view>
+  <view>
+    <text class='orangeColor'>身份证</text>
+    <input id="IDCard" maxlength='18' type='text' value='{{customer_list.IDCard}}' placeholder='身份证' bindinput="bindInput"></input>
+  </view>
+  <view>
+    <text class='orangeColor'>邮箱</text>
+    <input id="Emai" type='text' value='{{customer_list.QQ}}' placeholder='邮箱' bindinput="bindInput"></input>
+  </view>
+  <view>
+    <text class='orangeColor'>省市区</text>
+    <picker id="region" mode="region" bindchange="bindChange"  custom-item="{{customItem}}">
+      <view class="picker">
+        {{customer_list.Province}} {{customer_list.City}} {{customer_list.Area}}
+      </view>
+    </picker>
+  </view>
+  <view>
+    <text class='orangeColor'>地址</text>
+    <input id="Address" type='text' value='{{customer_list.Address}}' placeholder='地址' bindinput="bindInput"></input>
+  </view>
+  <view>
+    <text class='orangeColor'>银行</text>
+    <picker id="bank" mode="selector" maxlength='25' bindchange="bindChange" range="{{BankName}}">
+      <view class="picker">
+        {{customer_list.BankName}}
+      </view>
+    </picker>
+  </view>
+  <view>
+    <text class='orangeColor'>账号</text>
+    <input id="BankAccount" type='number'  value='{{customer_list.BankAccount}}' placeholder='银行卡号' bindinput="bindInput"></input>
+  </view>
+</view>
+
+<button class='m-modifyBtn' bindtap='revise'>修改</button>

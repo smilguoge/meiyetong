@@ -1,0 +1,47 @@
+/* pages/myOrders/orderItem/orderItem.wxss */
+@import '../../../app.wxss';
+
+.orderItem{
+  font-size: 30rpx;
+  padding: 20rpx 24rpx;
+  background: white;
+}
+.m-ordercont{
+  padding: 20rpx 24rpx;
+  font-size: 30rpx;
+  align-items: flex-start;
+}
+.m-orderImg{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 24rpx;
+}
+.m-orderAccount{
+  text-align: right;
+  border-bottom: 2rpx solid #f2f2f2;
+  background: white;
+  padding: 20rpx 24rpx;
+}
+.m-orderBtn{
+  text-align: right;
+  background: white;
+  padding: 20rpx 24rpx;
+}
+.m-orderBtn button{
+  border-radius: 40rpx;
+  border: 2rpx solid #333;
+  font-size: 24rpx;
+  color: #333;
+  padding: 0rpx 24rpx;
+  margin-left: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: none;
+  display: inline-block;
+  min-width: 100rpx;
+
+}
+.m-orderBtn button.m-btnColor{
+  color: #4fd2c2;
+  border-color: #4fd2c2;
+}

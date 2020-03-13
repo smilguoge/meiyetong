@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "tabTem":"../../components/tabTem/tabTem",
+    "orderItem":"orderItem/orderItem",
+    "noneList": "../../components/noneList/noneList"
+  }
+}

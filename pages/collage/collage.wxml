@@ -1,0 +1,48 @@
+<!--pages/collage/collage.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+indicator-active-color="{{indicatorDotsActive}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{bannerImg.length>1}}">
+  <block wx:for="{{bannerImg}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.plug_ad_pic==''?'../../images/coverDefault.png' : item.plug_ad_pic}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='m-collageMenu flex'>
+  <block wx:for="{{collageMenu}}" wx:key="index">
+  <view class='flexcell {{index==collageMenuIdx? "active" : ""}}' data-index='{{index}}' bindtap='chooseMenu'>
+    <image src='{{item.icon}}' mode='widthFix'></image>
+    <rich-text name="p">{{item.text}}</rich-text>
+  </view>
+  </block>
+</view>
+
+<view class='m-collageTitel'>
+  <image src='../../images/icon1@2x.png' mode='widthFix' class='mr'></image>
+  <text> 热销拼团 </text>
+  <image src='../../images/icon1@2x.png' mode='widthFix' class='ml'></image>
+</view>
+<view style='padding:26rpx;' wx:if="{{hotCollage.length>0}}">
+  <swiper indicator-dots="{{indicatorDots}}"
+  indicator-active-color="{{indicatorDotsActive}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:360rpx'>
+    <block wx:for="{{hotCollage}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.Cover==''?'../../images/coverDefault.jpg' : item.Cover}}" class="slide-image" style='border-radius:10rpx;' bindtap='toCollageDetal' data-id='{{item.id}}' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='m-collageTitel'>
+  <image src='../../images/icon1@2x.png' mode='widthFix' class='mr'></image>
+  <text> 拼团 </text>
+  <image src='../../images/icon1@2x.png' mode='widthFix' class='ml'></image>
+</view>
+<view class='m-collageList flex'>
+  <block wx:for="{{collageList}}" wx:key="index">
+    <collageItem collage="{{item}}" bindtap='toCollageDetal' data-id='{{item.id}}'></collageItem>
+  </block>
+</view>
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+
+

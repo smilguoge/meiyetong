@@ -1,0 +1,21 @@
+<!--pages/jifenMall/jifenMall.wxml-->
+<view class='m-mallTop'>
+  <image src='../../images/jifen-bg@2x.png' mode='widthFix'></image>
+  <view>
+    <rich-text name="h2">{{Integral}}</rich-text>
+    可用积分
+  </view>
+</view>
+
+<jifenTab bind:getIntegral='getTab'></jifenTab>
+
+<view class='flex bgWhite p24 m-jifenlist'>
+  <block wx:for="{{list}}" wx:key="index">
+    <jifenItem project="{{item}}"></jifenItem>
+  </block>
+</view>
+<block wx:if="{{list.length ==0}}">
+  <noneList>
+    <view>没有可兑换的项目</view>
+  </noneList>
+</block>

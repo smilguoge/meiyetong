@@ -1,0 +1,13 @@
+<!--components/noAuthorize/noAuthorize.wxml-->
+
+<!-- 自定义无权限组件 -->
+<template name="Accredit">
+  <view class="Accredit_box">
+     <view class="Accredit_content">
+          <image class='Accredit_img' src='../../images/noAccredit.png' mode='scaleToFill' />
+     </view>
+     <button class='Accredit_btn' open-type="getUserInfo" bindgetuserinfo="login"> 
+        <image src='../../images/collageButton@2x.png' mode='widthFix'></image>
+      </button>
+  </view>
+</template>

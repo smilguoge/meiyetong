@@ -1,0 +1,29 @@
+<!--pages/mine/myRecommend/myRecommend.wxml-->
+<view class='shadow' bindtap='closeSpec'></view>
+<view class='m-spec'>
+  <view class='m-close' bindtap='closeSpec'>X</view>
+  <view class='m-title mb24'>已推荐成功用户</view>
+  <view class='grayColor tc'>我已成功邀请<text class='blueColor'>{{list.length}}名</text>小伙伴,我的推荐人:{{detail.Introducer}}</view>
+  
+  <view class='m-recommendList gray'>
+    <view class='m-tablecell'>头像</view>
+    <view class='m-tablecell'>用户名</view>
+    <view class='m-tablecell'>类型</view>
+    <view class='m-tablecell'>消费</view>
+  </view>
+  
+  <view class='m-recommendbox'>
+  <block wx:for="{{list}}" wx:key="index">
+    <view class='m-recommendList'>
+      <view class='m-tablecell'>
+      <image src='{{item.wximage}}'>
+      </image>
+      </view>
+      <view class='m-tablecell'>{{item.Name}}</view>
+      <view class='m-tablecell'>{{item.type}}</view>
+      <view class='m-tablecell'>{{item.Fmoney}}</view>
+    </view>
+  </block>
+  </view>
+</view>
+

@@ -1,0 +1,14 @@
+<!--pages/mapShopaddr/mapShopaddr.wxml-->
+<!--<map class='mapStyle' 
+longitude="{{location.lng}}" 
+latitude="{{location.lat}}"
+markers="{{markers}}"
+show-location
+show-compass="true"
+bindmarkertap="bindmarkertap"
+></map>
+<view class='flex addrCon'>
+  <view>万达店</view>
+  <view>导航</view>
+</view>-->
+<text>微信地图授权打开。。。。。</text>

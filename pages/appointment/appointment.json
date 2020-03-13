@@ -1,0 +1,9 @@
+{
+  "backgroundColor": "#f2f2f2",
+  "usingComponents": {
+    "accredit": "../../components/accredit/accredit",
+    "accreditPhone": "../../components/accreditPhone/accreditPhone",
+    "chooseLoginPopup": "../../components/chooseLoginPopup/chooseLoginPopup",
+    "chooseShop": "../../components/getshop/getshop"
+  }
+}

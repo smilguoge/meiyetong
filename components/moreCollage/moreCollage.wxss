@@ -1,0 +1,64 @@
+@import "../../app.wxss";
+/* components/moreCollage/moreCollage.wxss */
+
+.closeX{
+  position: fixed;
+  right: 10%;
+  top: 80rpx;
+  background: white;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 100%;
+  font-size: 38rpx;
+  z-index: 68;
+  color: #999999;
+}
+.isCollaging{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 68;
+  transform: translate(-50%,-50%);
+  width: 524rpx;
+  margin: 0 auto;
+  background: white;
+  padding: 24rpx;
+  border-radius: 10rpx;
+}
+.collagePerson{
+  height: 680rpx;
+  overflow-y: scroll;
+}
+.userImg{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+
+.m-title{
+  text-align: center;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 28rpx;
+  padding-bottom: 24rpx;
+}
+.personItem{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 26rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.restTime{
+  font-size: 20rpx;
+  color: #999999;
+}
+/* 昵称部分超出隐藏 */
+.txtOverflow{
+  overflow: hidden;
+  width: 166rpx;
+  text-overflow: ellipsis;
+  margin: 0 20rpx;
+  white-space: nowrap;
+}

@@ -1,0 +1,65 @@
+/* components/collageItem/collageItem.wxss */
+.bgWhite{
+  background: white;
+}
+.m-collageItemimg{
+  width: 338rpx;
+  height: 338rpx;
+  color: #333333;
+}
+.m-collageType{
+  border: 2rpx solid #22d8d4;
+  border-radius: 6rpx;
+  color: #22d8d4;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  padding: 0 6rpx;
+}
+.m-collageTitle{
+  padding: 24rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.m-collage{
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 24rpx;
+}
+.collageItem-cont{
+  font-size: 24rpx;
+}
+.toCollage{
+  color: white;
+  background: -webkit-linear-gradient(left, #fb9e62, #f9635c);
+  background: linear-gradient(to right, #fb9e62, #f9635c);
+  background-color: #f9635c;
+  width: 130rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  position: relative;
+}
+.toCollage::after{
+   position: absolute;
+    top: 50%;
+    right: 16rpx;
+    width: 12rpx;
+    height: 12rpx;
+    border-top: 2rpx solid #fff;
+    border-right: 2rpx solid #fff;
+    content: '';
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+}
+.m-price{
+  font-size: 36rpx;
+  color: rgb(251, 110, 142);
+}
+.m-count{
+  color: rgb(153, 153, 153);
+  font-size: 20rpx;
+}

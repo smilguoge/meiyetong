@@ -1,0 +1,95 @@
+/* components/seckillitem.wxss */
+.m-seckillitem {
+  width: 94%;
+  background: white;
+  border-bottom: 1px solid #F2F2F2;
+  padding:20rpx 24rpx;
+}
+.m-seckillitem image {
+  width: 259rpx;
+  display: inline-block;
+}
+.m-seckillitemRight {
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2%;
+  position:relative;
+  height:250rpx;
+
+}
+.m-seckillitemRight rich-text {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.m-seckillitemRight .m-seckill-center {
+  color: black;
+  margin-top: 9%;
+}
+.m-seckillitemRight .m-seckill-center p {
+  font-size: 25rpx;
+}
+.m-seckillitemRight .m-seckill-center span {
+  font-size: 35rpx;
+  color: #FF5759;
+  margin: 0 7rpx;
+}
+.m-seckillitemRight .m-seckill-center text {
+  font-size: 25rpx;
+  color: #B7B7B7;
+  text-decoration: line-through;
+}
+.m-seckillitemRight .m-seckill-bottom {
+  width: 100%;
+  margin-top:11%;
+  bottom:0;
+  position:absolute;
+  left: 0;
+}
+.m-seckillitemRight .m-seckill-bottom .m-seckillProgress {
+  width:179rpx;
+  height:30rpx;
+  border:1px solid #EC7A03;
+  position:relative;
+  border-radius:22rpx;
+  overflow:hidden;
+}
+.m-seckillitemRight .m-seckill-bottom .m-seckillProgress p {
+  height: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  background: #FCEAD3;
+  border-radius: 22rpx;
+}
+.m-seckillitemRight .m-seckill-bottom .m-seckillProgress span {
+  width: 100%;
+  display: inline-block;
+  font-size: 20rpx;
+  color: #EC7A03;
+  text-align: center;
+  position: absolute;
+  z-index: 22;
+}
+.m-seckillitemRight .m-seckill-bottom button {
+  width:151rpx;
+  display:inline-block;
+  vertical-align:top;
+  float:right;
+  border-radius:9rpx;
+  margin-top:-12%;
+  height:55rpx;
+  line-height:55rpx;
+  font-size:27rpx;
+  color: white;
+  background: #999999;
+}
+.m-seckillitemRight .m-seckill-bottom button.red {
+  background: #FF4D4F;
+}
+.m-seckillitemRight .m-seckill-bottom button.green {
+  background: #4FD2C2;
+}
+.m-seckillitemRight .m-seckill-bottom button.green image{
+  width: 30rpx;
+  margin-right: 10rpx;
+}

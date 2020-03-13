@@ -1,0 +1,22 @@
+<!--pages/jifenMall/template/jifenTab.wxml-->
+<view class='m-tabbox'>
+  <view class='flex tc m-tab'>
+    <view class='flexcell p24 {{allAct?"m-active":""}}' bindtap='chooseAll'><view>{{tabarr[tabidx]}}</view><text class='m-triangel'></text></view>
+    <view class='flexcell p24 {{personAct?"m-active":""}}' bindtap='choosePerson'><view>{{tabarr2[tabidx2]}}</view><text class='m-triangel'></text></view>
+  </view>
+
+  <view class='m-tabcont' wx:if="{{isshow}}">
+    <view class='p24 m-tabitem' wx:if="{{allAct}}">
+      <view class='justify-flex' wx:for="{{tabarr}}" wx:key="index" bindtap='changeItem' data-index="{{index}}">
+        {{item}}
+        <view class='m-gou' wx:if="{{index==tabidx}}"></view>
+      </view>
+    </view>
+    <view class='p24 m-tabitem' wx:if="{{personAct}}">
+      <view class='justify-flex' wx:for="{{tabarr2}}" wx:key="index" bindtap='changeExchange' data-index="{{index}}">
+        {{item}}
+        <view class='m-gou' wx:if="{{index==tabidx2}}"></view>
+      </view>
+    </view>
+  </view>
+</view>

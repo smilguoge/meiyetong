@@ -1,0 +1,56 @@
+<!--pages/balanceDetail/balanceDetail.wxml-->
+<view class='p24 m-cardList'>
+  <view class='m-cardItem discount-bg autoHeight' data-index='0' wx:if="{{list.ChuzhiCard.length > 0}}">
+    <image src='{{difcountImg}}' mode='widthFix'></image>
+    <view class='m-cardTitle'>储值卡</view>
+    <block wx:for="{{list.ChuzhiCard}}">
+      <view class='justify-flex'>
+        <view>{{item.CardType}}</view>
+        <text wx:if="{{item.CardKindNo == '005'}}">[{{item.OpenCard}} ~ {{item.EffectiveDate}}]</text>
+        <text wx:else>{{item.Balance}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='m-cardItem course-bg' wx:if="{{list.LiaochengCard.length > 0}}">
+    <image src='{{courseImg}}' mode='widthFix'></image>
+    <view class='m-cardTitle'>疗程卡</view>
+    <block wx:for="{{list.LiaochengCard}}"  >
+      <view class="card-line {{item.isShow?'autoHeight':''}}" bindtap='showAllcards' data-index="{{index}}" wx:key="{{index}}">
+        <view class='l-type'>{{item.CardType}}</view>
+        <text class='l-num'>{{item.SurplusQuantity}}次</text>
+        <view class='l-item' wx:for="{{item.detail}}" wx:for-item="itemName">
+          <view class='l-type'>{{itemName.ProjectName}}</view>
+          <text class='l-num'>{{itemName.SurplusQuantity}}次</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class='m-cardItem product-bg' wx:if="{{list.StoreGoods.length > 0}}">
+    <image src='{{productImg}}' mode='widthFix'></image>
+    <view class='m-cardTitle'>赠品寄存卡</view>
+    <block wx:for="{{list.StoreGoods}}">
+      <view class='justify-flex'>
+        <view>[{{item.Style}}]{{item.GoodsNameOrProject}}</view>
+        <text>{{item.SurplusQuantity}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='m-cardItem nopay-bg' wx:if="{{list.CardNonePay.length > 0}}">
+    <image src='{{nopayImg}}' mode='widthFix'></image>
+    <view class='m-cardTitle'>未结算卡</view>
+    <block wx:for="{{list.CardNonePay}}">
+      <view class='justify-flex'>
+        <view>[{{item.Style}}]{{item.CardType}}</view>
+        <text>{{item.NonePay}}</text>
+      </view>
+    </block>
+  </view>
+  <block wx:if="{{list.CardNonePay.length == 0 && list.StoreGoods.length == 0 && list.LiaochengCard.length == 0 &&list.LiaochengCard.length == 0}}">
+    <noneList>
+      <view>暂无余额详情</view>
+    </noneList>
+  </block>
+</view>

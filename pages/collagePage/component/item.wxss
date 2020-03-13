@@ -1,0 +1,38 @@
+/* pages/collagePage/component/item.wxss */
+.m-items{
+  background: white;
+  border-radius: 10rpx;
+  padding-bottom: 10rpx;
+  overflow: hidden;
+}
+.m-items image{
+  width: 100%;
+  height: 266rpx;
+}
+.item-title{
+  font-size: 24rpx;
+  /* padding: 0 24rpx; */
+  line-height: normal;
+}
+.m-price{
+  color: #fe4a49;
+  font-size: 20rpx;
+  padding: 0 24rpx;
+}
+.m-price text{
+  margin-right: 20rpx;
+}
+.m-price text:last-child{
+  text-decoration: line-through;
+  color: #999999;
+  font-size: 20rpx;
+}
+.m-btn{
+  width: 244rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin: 20rpx auto;
+  font-size: 20rpx;
+  color: white;
+  background: #fe4a49;
+}

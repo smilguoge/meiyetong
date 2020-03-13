@@ -1,0 +1,25 @@
+/* pages/orderDetail/orderDetail.wxss */
+@import '../myOrders/orderItem/orderItem.wxss';
+.m-addrcont{
+  background: white;
+  padding: 24rpx;
+
+}
+.justify-flex{
+  align-items: flex-start;
+}
+.m-addricon{
+  width: 30rpx;
+  margin-right: 24rpx;
+}
+.m-orderBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 2;
+}
+.m-orderBtn button{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}

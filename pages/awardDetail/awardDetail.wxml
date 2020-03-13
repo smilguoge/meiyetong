@@ -1,0 +1,55 @@
+<!--pages/awardDetail/awardDetail.wxml-->
+<view class='flex tc m-awardTab'>
+  <view class='flexcell'>
+    <image src='../../images/allAward@2x.png' mode='widthFix'></image>
+    <view>总奖励</view>
+    <text class='orangeColor'>￥{{reward_data.TotalShare}}</text>
+  </view>
+  <view class='flexcell'>
+    <image src='../../images/withdraw-icon@2x.png' mode='widthFix'></image>
+    <view>已提现花瓣</view>
+    <text class='orangeColor'>￥{{reward_data.ExchangeShare}}</text>
+  </view>
+  <view class='flexcell'>
+    <image src='../../images/noWithdraw@2x.png' mode='widthFix'></image>
+    <view>未提现花瓣</view>
+    <view class='orangeColor'>￥<text>{{reward_data.SurplusShare}}</text></view>
+  </view>
+</view>
+
+<view class='flex p24 bgWhite mb24'>
+  <image class='m-calendar' src='../../images/calendar-icon1@2x.png' mode='widthFix'></image>
+  <view class='flexcell flex grayColor ml24'>
+    <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" id='star'>
+      <view class="picker">
+        开始: {{startdate}}
+      </view>
+    </picker>
+    <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" id='end'>
+      <view class="picker">
+        结束: {{enddate}}
+      </view>
+    </picker>
+  </view>
+  <!-- <button class='m-sure'>确定</button> -->
+</view>
+
+<view class='bgWhite p24'>
+  <view class='m-recommendList'>
+    <view class='m-tablecell'>时间</view>
+    <view class='m-tablecell'>姓名</view>
+    <view class='m-tablecell'>花瓣</view>
+    <view class='m-tablecell'>来源</view>
+    <view class='m-tablecell'>状态</view>
+  </view>
+
+  <block wx:for="{{reward_data.list.data}}" wx:key="index">
+    <view class='m-recommendList grayColor'>
+      <view class='m-tablecell'>2018/08/08</view>
+      <view class='m-tablecell'>某某某</view>
+      <view class='m-tablecell'>+666</view>
+      <view class='m-tablecell'>购买</view>
+      <view class='m-tablecell'>已审核</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/jifenDetail/jifenDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<image src='{{list.project_avatar}}' mode='widthFix' class='collage-img'></image>
+
+<view class='bgWhite mb24'>
+  <view class='m-title'>
+    {{list.ProjectName}}
+  </view>
+  <view class='flex m-price'>
+    <text>兑换积分:{{list.Integral}}</text>
+    <text class='grayColor'>已兑换{{list.ProjectSales}}</text>
+  </view>
+</view>
+
+<!-- 商品详情 -->
+<view class='collage-detal'>
+  <view class='detailTit mb24'>商品详情</view>
+  <view>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+<view class='collageFixed'>
+  <view class='buyAlone'>
+    <rich-text name="p" bindtap='addTocart' data-id="{{list.ID}}" data-sta="{{list.sta}}">确认兑换</rich-text>
+  </view>
+</view>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>

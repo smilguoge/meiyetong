@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "accredit": "../../components/accredit/accredit",
+    "spec": "template/spec/spec",
+    "chooseLoginPopup": "../../components/chooseLoginPopup/chooseLoginPopup",
+    "chooseShop": "../../components/getshop/getshop",
+    "payType": "../../components/payType/payType",
+    "canvasToimg":"../../components/canvasToimg/canvasToimg"
+  }
+}

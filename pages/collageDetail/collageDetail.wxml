@@ -1,0 +1,86 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<!--pages/collageDetail/collageDetail.wxml-->
+<image src='{{spellingDetial.BigPic}}' mode='widthFix' class='collage-img'></image>
+
+<view class='bgWhite mb24'>
+  <view class='m-title'>
+    {{spellingDetial.ProjectName}}
+  </view>
+  <view class='flex m-price'>
+    <text>￥{{spellingDetial.Price}}</text>
+    <text>已拼成{{spellingDetial.HasSpellingNum}}件</text>
+  </view>
+</view>
+
+<view class='bgWhite mb24'>
+  <view class='collageNum flex'>
+    <view>{{spellingDetial.PepoleNum}}人在拼单，可直接参与拼团</view>
+    <view class='rightArrow' bindtap='showAllcollage'>查看更多</view>
+  </view>
+  <block wx:for="{{collageList}}" wx:key="index">
+    <view wx:if="{{index < 3}}">  <!-- 页面上显示3条数据 -->
+    <view class='collageItem flex'>
+      <view class='collage-user'>
+        <image src='{{item.wximage}}' class='collage-userImg'></image>
+      </view>
+      <view class='collageName'>{{item.Name}}</view>
+      <view class='pinTime flex'>
+        <view>
+          还差<text class='orangeColor'>{{item.surplus_number}}人</text>拼成
+          <rich-text name="p">剩余{{item.time}}</rich-text>
+        </view>
+        
+        <toCollageBtn spelling_id="{{item.id}}"></toCollageBtn><!-- 去拼团 -->
+      </view>
+    </view>
+    </view>
+  </block>
+</view>
+
+<!-- 商品详情 -->
+<view class='collage-detal'>
+  <view class='detailTit mb24'>商品详情</view>
+  <view>
+    <!-- {{spellingDetial.Content?spellingDetial.Content:''}} -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+<view class='collageFixed'>
+  <view class='buyAlone' bindtap='buyAlone'>
+    ￥{{spellingDetial.OriginalPrice}}
+    <rich-text name="p">单独购买</rich-text>
+  </view>
+  <view class='buyTogether' bindtap='toCollagepage'>
+    ￥{{spellingDetial.Price}}
+    <rich-text name="p">发起拼团</rich-text>
+  </view>
+</view>
+
+<!-- 更多拼团 -->
+<moreCollage collageList="{{spellingDetial.list}}"
+bind:closeAllcollage="closeAllcollage"
+ wx:if="{{showAllcollage}}"></moreCollage>
+
+<!-- 单独购买 -->
+<buySelf wx:if="{{showConfirm}}" bind:cancelEvent="cancelEvent" bind:sureEvent="sureEvent">
+  <view class='buySelf-con'>
+    <view>确定购买：</view>
+    <view class='buyCon'>{{spellingDetial.ProjectName}}</view>
+  </view>
+</buySelf>
+
+<!-- 支付失败弹窗提示 -->
+<buySelf wx:if="{{failPayConfirm}}" bind:cancelEvent="failPaycancelEvent" bind:sureEvent="failPaysureEvent">
+  <view class='buySelf-con'>
+    <view>支付失败</view>
+  </view>
+</buySelf>
+
+<!-- 确定购买后显示支付方式 -->
+<payType wx:if="{{showPaytype}}" bind:cancelPay="cancelPay" bind:successPay="successPay" bind:failPay="failPay" spellingDetial="{{spellingDetial}}"></payType>
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+
+<!-- 获取手机号授权 -->
+<accreditPhone wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></accreditPhone>

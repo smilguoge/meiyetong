@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mineTab": "../../components/mineTab/mineTab",
+    "noneList": "../../components/noneList/noneList"
+  }
+}

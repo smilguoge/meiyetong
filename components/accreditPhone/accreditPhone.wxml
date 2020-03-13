@@ -1,0 +1,10 @@
+<!--components/accredit/accredit.wxml-->
+<view class="Accredit_box">
+    <view class="Accredit_content">
+        <image class='Accredit_img' src='../../images/noAccredit.png' mode='widthFix' />
+    </view>
+    <!-- <button class='Accredit_btn' open-type="getUserInfo" bindgetuserinfo="login"> 
+      请求获取您的手机号
+    </button> -->
+    <button class='Accredit_btn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">请求获取您的手机号</button>
+</view>

@@ -1,0 +1,46 @@
+/* components/chooseLoginPopup/chooseLoginPopup.wxss */
+@import "../../app.wxss";
+.m-accreditType{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 77;
+  transform: translate(-50%,-50%);
+  padding: 20rpx;
+  background: white;
+  border-radius: 10rpx;
+  width: 80%;
+  font-size: 36rpx;
+}
+.m-typeView{
+  width: 50%;
+  background: none;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #808080;
+}
+.m-typeView view{
+  width: 136rpx;
+  height: 136rpx;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: #f2f2f2;
+  position: relative;
+}
+.m-typeView view image{
+  display: inline-block;
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.m-close{
+  position: fixed;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  z-index: 77;
+}

@@ -1,0 +1,32 @@
+<!--pages/addAddress/addAddress.wxml-->
+<!-- 添加地址 -->
+<view class='addrForm'>
+  <view class='flex addrItem'>
+    <text>联系人</text>
+    <input type='text' placeholder='联系人' value='{{addressInfo.Name}}' bindconfirm="addressName" bindblur="addressName" class='flexcell'></input>
+  </view>
+  <view class='flex addrItem'>
+    <text>手机号码</text>
+    <input type='text' placeholder='手机号码' value='{{addressInfo.Phone}}' bindconfirm="addressPhone" bindblur="addressPhone" class='flexcell'></input>
+  </view>
+  <view class='flex addrItem'>
+    <text>所在地区</text>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" class='flexcell' style='height:50rpx;' >
+      <view class="picker">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class='flex addrItem'>
+    <text>详情地址</text>
+    <input type='text' placeholder='街道、楼牌号等' value='{{addressInfo.Address}}' bindconfirm="addressCont" bindblur="addressCont" class='flexcell'></input>
+  </view>
+  <view class='flex addrItem addrDef'>
+    设置为默认地址
+    <switch bindchange="isStateChange" checked="{{addressInfo.State==0}}"></switch>
+  </view>
+</view>
+
+<view class='addrFixedBottom' bindtap='saveEvent'>
+  <button>保存</button>
+</view>

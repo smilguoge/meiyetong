@@ -1,0 +1,12 @@
+<!--pages/shop/template/hotItem/hotItem.wxml-->
+<view class='m-hotItem' bindtap='toProjectdetail' data-goodsid='{{hotitem.ProjectId || hotitem.Id || hotitem.ID}}'>
+  <image wx:if="{{isGoods!=1}}" src='{{hotitem.project_avatar}}'></image>
+  <image wx:else src='{{hotitem.pic}}'></image>
+  <view wx:if="{{isGoods==1}}" class='m-hotitem-title'>{{hotitem.GoodsName}}</view>
+  <view wx:else class='m-hotitem-title'>{{hotitem.ProjectName}}</view>
+  <view class='m-hotitem-text'>
+    <text class='orangeColor'>￥{{hotitem.Price}}</text>
+    <!-- <text class=''>总销量{{hotitem.ROW_NUMBER || 0}}{{hotitem.FUnit}}</text> -->
+    <text class='' wx:if="{{isGoods==1}}">{{hotitem.ROW_NUMBER || 0}}{{hotitem.FUnit}}</text>
+  </view>
+</view>

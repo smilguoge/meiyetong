@@ -1,0 +1,52 @@
+<!--pages/collagePage/collagePage.wxml-->
+<!-- 授权 -->
+<accredit wx:if="{{noaccredit}}" bind:login="login"></accredit>
+<!-- 选择登录方式 -->
+<chooseLoginPopup wx:if="{{noaccreditPhone}}" bind:loginPhone="loginPhone"></chooseLoginPopup>
+<!-- 门店选择 -->
+<chooseShop bind:loginshop="loginshop" wx:if="{{noaccreditshop}}"></chooseShop>
+
+<!-- 去拼团 -->
+<image src='../../images/pinBgimg@2x.png' mode='widthFix' class='pinBgimg'></image>
+<view class='m-mainbox'>
+  <view class='pinGoods'>
+    <image src='{{spellingDetail.BigPic ? spellingDetail.bigPic : "../../images/coverDefault.jpg"}}' mode='widthFix'></image>
+    <view class='pinGoods-title'>
+      <view class='pinGoods-txt'>{{spellingDetail.ProjectName}}</view>
+      <text class='orangeColor'>￥{{spellingDetail.Price}}</text>
+    </view>
+  </view>
+  <view>
+    <view class='pinPerson-txt' wx:if="{{!isSuccess}}">还差<text class='orangeColor'>{{num}}</text>人，人满即可拼团成功</view>
+    <view class='pinPerson-txt' wx:else><text class='orangeColor'>恭喜恭喜，拼团成功啦</text></view>
+    <view class='pinPersonnum flex'>
+      <block wx:for="{{spellingList}}" wx:key="index">
+        <view>
+          <image src='{{item.wximage?item.wximage:"../../images/defaultImg@2x.png"}}'></image>
+          <text wx:if="{{item.is_leader=='1'}}">团长</text>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{!isSuccess}}">
+    <button class='inviteBtn' open-type='share' wx:if='{{isLeader}}'>点击邀请好友拼单</button>
+    <button class='inviteBtn' bindtap='toPayment' wx:else>确认拼团</button>
+    <view class='tipTxt'>{{endTime}}后失效</view>
+    </view>
+
+    
+
+    <view class='tc m-notice'>
+      <image src='../../images/icon2@2x.png' mode='widthFix' width="50%"></image>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class='tc' wx:if="{{isShare}}" style='color:white;' bindtap='toIndexpage'>返回首页</view> -->
+<view class='tc' style='color:#999;' bindtap='toIndexpage'>返回首页</view>
+
+<view class='flex recommendItem'>
+  <block wx:for="{{0}}" wx:key="index">
+    <item></item>
+  </block>
+</view>

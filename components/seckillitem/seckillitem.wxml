@@ -1,0 +1,29 @@
+<!--components/seckillitem.wxml-->
+<block wx:for="{{List}}" wx:key="{{index}}">
+<view class='m-seckillitem'>
+  <image src="{{item.Cover==''?'../../images/shop_nodata.jpg':item.Cover}}" mode='widthFix'/>
+  <view class='m-seckillitemRight'>
+    <rich-text>{{item.ProjectName}}</rich-text>
+    <view class='m-seckill-center'>
+      <p>限时价</p>
+      <span>￥{{item.Price}}</span>
+      <text>原价 ￥{{item.OriginalPrice}}</text>
+    </view>
+    <view class='m-seckill-bottom'>
+      <view class='m-seckillProgress'>
+        <span>仅剩{{item.DiffNumber}}件</span>
+        <p style="width:{{(item.BuyNumber/item.Number)*100}}%"></p>
+      </view>
+      <block wx:if="{{item.sta == 0}}">
+        <button class='red' bindtap='goPage' data-ProjectId="{{item.ProjectId}}" data-id='{{item.id}}' data-index="{{1}}">马上抢</button>
+      </block>
+      <block wx:elif="{{item.sta == 1}}">
+        <button class='green' bindtap='goPage' data-ProjectId="{{item.ProjectId}}" data-id='{{item.id}}' data-index="{{2}}"><image src='../../images/click.png' mode='widthFix'/>提醒</button>
+      </block>
+      <block wx:elif="{{item.sta == -1}}">
+        <button bindtap='goPage' data-ProjectId="{{item.ProjectId}}" data-id='{{item.id}}' data-index="{{3}}">已结束</button>
+      </block>
+    </view>
+  </view>
+</view>
+</block>

@@ -1,0 +1,14 @@
+/* pages/jifenMall/jifenItem/jifenItem.wxss */
+@import '../../../app.wxss';
+
+.m-jifenItem{
+  font-size: 32rpx;
+}
+.m-jifenItem image{
+  border-radius: 20rpx;
+  width: 100%;
+  margin-bottom: 24rpx;
+}
+.m-jifenItem view{
+  margin-bottom: 16rpx;
+}

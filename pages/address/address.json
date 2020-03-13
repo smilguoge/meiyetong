@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents" : {
+    "noneList" : "../../components/noneList/noneList",
+    "showConfirm": "../../components/showConfirm/showConfirm"
+  }
+}

@@ -1,0 +1,72 @@
+/* pages/address/address.wxss */
+.addrList{
+overflow: hidden;
+}
+.tips{
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+  padding-left: 20rpx;
+}
+.addressItem{
+  background: white;
+  padding: 24rpx;
+  font-size: 28rpx;
+  margin-bottom: 2rpx;
+  justify-content: space-between;
+  position: relative;
+}
+.infinity{
+  transform: translateX(-120rpx);
+  transition: transform 0.5s;
+  -webkit-transition:transform 0.5s;
+}
+.delAddr{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #fd3d71;
+  color: white;
+  width: 120rpx;
+  height: 100%;
+  line-height: 148rpx;
+  text-align: center;
+}
+.addrNamecont{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+}
+.addrCont{
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.m-editIcon{
+  width: 40rpx;
+}
+.defaultAddr{
+  color: white;
+  background: #fd3d71;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  padding: 0 10rpx;
+  font-size: 20rpx;
+}
+.addrFixedBottom{
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 3;
+  height: 80rpx;
+  text-align: center;
+  background: white;
+  padding: 20rpx 24rpx;
+}
+.addrFixedBottom button{
+  line-height: 80rpx;
+  background: #fd3d71;
+  color: white;
+}

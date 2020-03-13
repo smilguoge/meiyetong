@@ -1,0 +1,91 @@
+/* pages/cart/cart.wxss */
+.m-cart-top{
+  justify-content: space-between;
+  background: #4fd2c2;
+  height: 200rpx;
+  color: white;
+  font-size: 32rpx;
+  align-items: flex-start;
+  padding: 24rpx;
+}
+.bold{
+  font-weight: bold;
+}
+.bold rich-text{
+  font-size: 26rpx;
+  font-weight: normal;
+  margin-top: 18rpx;
+  display: block;
+}
+
+.m-cartList{
+  margin-top: -120rpx;
+  padding-bottom:88rpx;
+
+}
+.m-cart-item{
+  background: white;
+  padding: 24rpx;
+  border-radius: 20rpx;
+  margin: 24rpx;
+  font-size: 26rpx;
+  color: #333;
+  /* justify-content: space-between; */
+}
+.m-chooseIcon{
+  width: 40rpx;
+}
+.m-cartImg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 20rpx;
+  margin: 0 10rpx;
+}
+.m-cartCont{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 140rpx;
+  /* max-width: 33%; */
+}
+.m-cartIpt text{
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 100%;
+  color: white;
+  background: #dbdbdb;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.m-cartIpt text.m-addipt{
+  background: #4fd2c2;
+}
+.m-cartIpt input{
+  width: 100rpx;
+  text-align: center;
+}
+
+.m-fixedbottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  justify-content: space-between;
+  padding: 14rpx 24rpx;
+  font-size: 24rpx;
+  z-index:99;
+}
+.m-jiesuan{
+  display: inline-block;
+  background: #fe9903;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 160rpx;
+  text-align: center;
+  color: white;
+  border-radius: 50rpx;
+}

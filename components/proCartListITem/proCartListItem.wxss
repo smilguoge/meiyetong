@@ -1,0 +1,43 @@
+/* components/proCartListITem/proCartListItem.wxss */
+@import "../../app.wxss";
+.m-proImg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 20rpx;
+}
+.m-proListitem{
+  padding: 20rpx 0;
+  margin-left: 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.m-proItem{
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 140rpx;
+  position: relative;
+  padding: 0 20rpx;
+}
+.m-proItem-img{
+  width: 30rpx;
+}
+.m-cartIpt text{
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 100%;
+  color: white;
+  background: #dbdbdb;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.m-cartIpt text.m-addipt{
+  background: #4fd2c2;
+}
+.m-cartIpt input{
+  width: 100rpx;
+  text-align: center;
+}

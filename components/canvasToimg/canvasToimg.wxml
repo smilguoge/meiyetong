@@ -1,0 +1,5 @@
+<!--components/canvasToimg/canvasToimg.wxml-->
+<view class='m-canvasShodaw {{isCanvas?"db":""}}' bindlongpress='canvas2img'>
+  <view class='m-shadow' bindtap='closeCanvas'></view>
+  <canvas class='m-canvas' canvas-id="firstCanvas"></canvas>
+</view>
